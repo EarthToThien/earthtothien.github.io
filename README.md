@@ -1,2 +1,1 @@
-# earthtothien.github.io
-Hello, World!
+Hello, world!
