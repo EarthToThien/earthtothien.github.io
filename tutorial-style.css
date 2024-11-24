@@ -41,7 +41,7 @@ hr{
     text-decoration: underline;
 }
 .text-red{
-    font-weight: bold;
+    font-weight:bold;
     color:#ee5253;
 }
 .text-yellow{
@@ -68,11 +68,12 @@ a{
 
 .code-red{
 	background: #87837826;
-    color:#ee5253;   
-    border-radius: 3px;
-    padding: 0.2em 0.4em;
-    font-size: 85%;
-    tab-size: 2;
+    color:#ee5253;
+	border-radius: 3px;
+	padding: 0.2em 0.2em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
 }
 
 table,
@@ -99,6 +100,14 @@ td{
 th{
 	color: #FFFFFF;
     background-color:#222f3e;
+}
+
+button{
+    padding: 8px 24px;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 img{
