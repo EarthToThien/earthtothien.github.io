@@ -37,6 +37,9 @@ hr{
     background-color: gray;
 }
 
+.text-hover:hover {
+    text-decoration: underline;
+}
 .text-red{
     font-weight: bold;
     color:#ee5253;
@@ -96,4 +99,9 @@ td{
 th{
 	color: #FFFFFF;
     background-color:#222f3e;
+}
+
+img{
+    max-width: 80%;
+    height: auto;
 }
