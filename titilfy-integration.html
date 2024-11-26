@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="tutorial-style.css"/>
     <link rel="stylesheet" href="prism.css"/>
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
 </head>
 
 <div class="header">
@@ -32,17 +33,21 @@
 
 <h2 id="Download_Code">Download Code</h2>
 <hr>
-<button onclick="location.href='https://extensions.streamer.bot/t/tiltify-integration/250'" type="button">Tiltify-Streamer.Bot Integration v2.0.1</button>
+<button onclick="location.href='https://extensions.streamer.bot/t/tiltify-integration/250'" type="button">
+    <i class="fa-regular fa-mug-hot"></i>
+    <p><strong>Tiltify-Streamer.Bot Integration</strong></p>
+    <p>EarthToThien's Ko-fi Shop</p>
+</button>
 <br>
 
 <h2 id="Installation">Installation</h2>
 <hr>
 <p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the downloaded Import Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
 
-<p style="text-align: center;">
-    <img src="https://lh3.googleusercontent.com/d/1z_XfCKiIksdva5MTLNdFulSyF-ZkMKqw" alt="Streamer.Bot Import Window">
-    <figcaption style="text-align: center;"><strong>Figure 1</strong>: Streamer.Bot import window</figcaption>
-</p>
+<figure style="text-align: center;">
+    <img class="img-60" src="https://lh3.googleusercontent.com/d/1z_XfCKiIksdva5MTLNdFulSyF-ZkMKqw" alt="Streamer.Bot Import Window">
+    <figcaption><strong>Figure 1</strong>: Streamer.Bot import window</figcaption>
+</figure>
 
 
 <p>After importing the extension, the following items should appear in the Streamer.Bot client under the corresponding tabs:</p>
@@ -70,21 +75,27 @@
 
 <h2 id="Configuration">Configuration</h2>
 <hr>
-
-<br>
-
 <h3>Get Access Token</h3>
 <p>In order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> for the <span class="text-yellow">Get Access Token</span> action, a Tiltify account is required. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application, but it is not required for the extension function. For this, <code class="code-red">http://localhost</code> is used as shown in Figure 2.</p>
 
-<p>->INSERT FIGURE 2 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-40" src="https://lh3.googleusercontent.com/d/1aYqxRqRAoaGCbCpLCUFtZjETbU4U9TY8" alt="Tiltify Create App page">
+    <figcaption><strong>Figure 2</strong>: Tiltify Create Application window, located under the Developer hub</figcaption>
+</figure>
 
 <p>After creating an app, a notification will appear indicating that the app was made successfully. Further down the page, there is a blurred section called “Application keys” that will provide the <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> that are required for the extension to generate an <span class="text-red">Access Token</span> (<code class="code-red">accessToken_Tiltify</code>) for Tiltify access. The corresponding sub-actions under the <span class="text-yellow">Get Access Token</span> action are then populated with the acquired information (Figure 3).</p>
 
-<p>->INSERT FIGURE 3 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-80" src="https://lh3.googleusercontent.com/d/1GFLUkslPG7J6oyBZAvkEHDCS_WmjC414" alt="Tiltify Application keys needed for the Streamer.Bot Tiltify extension.">
+    <figcaption><strong>Figure 3</strong>: The Tiltify Application keys are required for the Streamer.Bot client to generate an access token to poll Tiltify.</figcaption>
+</figure>
 
 <p>The extension also requires the user to have an active or published Tiltify charity campaign. From the Tiltify campaign dashboard, the public ID can be found under Information tab of Setup (Figure 4).</p>
 
-<p>->INSERT FIGURE 4 HERE</p>
+<p style="text-align: center;">
+    <img class="img-80" src="https://lh3.googleusercontent.com/d/1C0wDdLEH2PJYuZY6-XA7eh3rl56nNwDS" alt="Tiltify Campaign ID needed for Streamer.Bot Tiltify extension.">
+    <figcaption><strong>Figure 4</strong>: The public ID is required to link the Tiltify campaign to the Streamer.Bot extension. This allows data to be obtained from the active campaign.</figcaption>
+</p>
 
 <br>
 
@@ -129,7 +140,10 @@
 
 <p>There are two methods to trigger alert actions built into the <span class="text-yellow">List Donations</span> action: Sub-Action Method and C# Method. Both methods are dependent on user preference and the complexity of the alert action triggers. The <span class="text-yellow">List Donations</span> action has two different configurations based on the selected trigger alert method used. The Sub-Action Method and C# Method both are functionally similar, but depending on the complexity of the conditions to trigger alerts, the C# Method may be the recommended configuration. If based solely on conditions surrounding the <code class="code-red">donorAmount</code> argument, the Sub-Action Method will provide a simpler setup. Once alert actions are linked to the <span class="text-yellow">List Donations</span> action, the <span class="text-blue">Tiltify - List Donations</span> timer located under Settings > Timed Actions needs to be enabled in order to begin polling Tiltify (Figure 5).</p>
 
-<p>->INSERT FIGURE 5 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-60" src="https://lh3.googleusercontent.com/d/1FkjQK0EdI5g90KSipXYGoykKXW1jeblv" alt="Timed Actions window in Streamer.Bot showing the Timed Action settings for the List Donations action.">
+    <figcaption><strong>Figure 5</strong>: Timed Actions settings for the <span class="text-yellow">List Donations</span> action.</figcaption>
+</figure>
 
 <br>
 
@@ -176,17 +190,26 @@
 <br>
 
 <h4 id="Sub-Action_Method">Option A: Sub-Action Method</h4>
-<p>->INSERT FIGURE 6 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-full" src="https://lh3.googleusercontent.com/d/1eTjhBF4uUi3Mtzp_t6GAVHwdZj3JAGHY" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
+    <figcaption><strong>Figure 6</strong>: Sub-Action Method configuration for the <span class="text-yellow">List Donations</span> action. This is the default configuration for the Sub-Actions in red text are set to disabled.</figcaption>
+</figure>
 
 <p>The Sub-Action Method uses native Streamer.Bot sub-actions to trigger alert actions and uses a configuration similar to the example shown in Figure 6. This configuration is provided upon installation of the extension, and if no other alerts will be used, it will be ready to be used as-is. Following the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action, the <strong>Run Action</strong> sub-action triggers the alert actions. If the user only has one action for all donation alerts, the configuration shown in Figure 6 will be sufficient.</p>
 <p>For different triggered alert actions under the Sub-Action Method, the <strong>If/Else</strong> sub-action is used to set different conditions for alerts as shown in the example in Figure 7. For each <strong>If/Else</strong> sub-action used, a “Break” must be set if the condition is met, otherwise “Continue” to check the next condition. If <code class="code-red">donorAmount</code> is used for the conditions of the <strong>If/Else</strong> sub-actions, it is recommended that sub-actions be organized in descending order especially if comparatives (greater than, less than, etc.) are used. The last sub-action can be a <strong>Run Action</strong> sub-action for all donations that do not meet any of the established conditions.</p>
 
-<p>->INSERT FIGURE 7 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-full" src="https://lh3.googleusercontent.com/d/1Bt8WZmCdy7DDtdvRdVGbo_n1UWEGOX_F" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
+    <figcaption><strong>Figure 7</strong>: Example of If/Else setup for the Sub-Action Method of the <span class="text-yellow">List Donation</span> action.</figcaption>
+</figure>
 
 <br>
 
 <h4 id="C#_Method">Option B: C# Method</h4>
-<p>->INSERT FIGURE 8 HERE</p>
+<figure style="text-align: center;">
+    <img class="img-full" src="https://lh3.googleusercontent.com/d/1SpBphgdA42oePzrBFRHP66C00ziKvZWB" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled."></img>
+    <figcaption><strong>Figure 8</strong>: C# Method configuration for the <span class="text-yellow">List Donation</span> action. Sub-actions in red text are set to disabled.</figcaption>
+</figure>
 
 <p>The C# Method uses the <strong>Execute Code (Donation Alerts)</strong> sub-action to trigger all alert actions and uses the configuration as shown in Figure 8. If this method is selected, all sub-actions for the Sub-Action Method must be disabled or removed from the <span class="text-yellow">List Donations</span> action. All of the sub-actions used in the Sub-Action Method are already built into the C# code for the <strong>Execute Code (Donation Alerts)</strong> sub-action. In order to trigger different alert actions, C# conditions and If statements are used as seen in the example below (Figure 9).</p>
 
@@ -210,6 +233,7 @@ else
 }
 </code>
 </pre>
+<figcaption><strong>Figure 9</strong>: Example C# code of conditions and If statements to trigger different alert actions. The “m” included with the numbers in the conditions is required when comparing decimals, the numerical format of the <code class="code-red">donorAmount</code> variable.</figcaption>
 
 <p>Once the conditions are satisfied, the native C# method <span class="text-purple">CPH.RunAction</span> is used to trigger the alert action. For more information on native C# methods in Streamer.Bot, refer to the wiki. Similar to the Sub-Action Method, it is recommended that the conditions be set in descending order if <code class="code-red">donorAmount</code> is used.</p>
 <br>
@@ -217,8 +241,16 @@ else
 <h3 id="Alerts">Alerts</h3>
 <p>Alert actions are triggered based on the conditions set in the <span class="text-yellow">List Donations</span> action. When triggered, alert actions will have access to all the arguments generated by the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action in the <span class="text-yellow">List Donations</span> action (see table in List Donations section). The <span class="text-yellow">Generic Alert</span> action is a simple example of how these arguments may be used (Figure 10). For the <strong>Send Message to Twitch Channel</strong> sub-action, the arguments <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> are used in a message to be sent to the Twitch chat (Figure 11).</p>
 
-<p>->INSERT FIGURE 10</p>
-<p>->INSERT FIGURE 11</p>
+<figure style="text-align: center;">
+    <img class="img-full" src="https://lh3.googleusercontent.com/d/1MGyrdj8fhbauJdjFz-HjkGzjKOMo5F7e" alt="Sub-action list for Generic Alert action.with the Send Message to Twitch Channel sub-action using the donorName and donorAmount arguments."></img>
+    <figcaption><strong>Figure 10</strong>: Sub-Action list for <span class="text-yellow">Generic Alert</span> action is a simple <strong>Send Message to Twitch Channel</strong> sub-action using the <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> arguments.</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+    <img class="img-full" src="https://lh3.googleusercontent.com/d/1UcCpkkEDX1BMnMC8C_FQWxaBDllK9oB6" alt="Send Message to Twitch action using the donorName and donorAmount argument to send charity message."></img>
+    <figcaption><strong>Figure 11</strong>: <strong>Send Message to Twitch Channel</strong> sub-action in the <span class="text-yellow">Generic Alert</span> action. This sub-action is used to send a charity message into chat after every new donation.</figcaption>
+</figure>
+
 <br>
 
 <h3 id="Total_Raised">Total Raised</h3>
@@ -265,21 +297,17 @@ else
 
 <h2 id="Suport">Support</h2>
 <hr>
-<div class="indent">
-    <p><a href="https://www.twitch.tv/EarthToThien"><span class="text-hover">Twitch</span></a></p>
-    <p><a href="https://www.youtube.com/@EarthToThien"><span class="text-hover">YouTube</span></a></p>
-    <p><a href="https://ko-fi.com/earthtothien"><span class="text-hover">Ko-fi</span></a></p>
-</div>
+    <p><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch" style="color: #B197FC;"></i><span class="text-hover" style="padding-left: 8px;">Twitch</span></a></p>
+    <p><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i><span class="text-hover" style="padding-left: 8px;">YouTube</span></a></p>
+    <p><a href="https://ko-fi.com/earthtothien"><i class="fa-regular fa-mug-hot"></i><span class="text-hover" style="padding-left: 8px;">Ko-fi</span></a></p>
 
 <br>
 
 <h2 id="Contact">Contact</h2>
 <hr>
-<div class="indent">
-    <p><a href="mailto:EarthToThienCo@gmail.com"><span class="text-hover">Email</span></a></p>
-    <p><a href="https://bsky.app/profile/earthtothien.bsky.social"><span class="text-hover">Bluesky</span></a></p>
-    <p><a href="https://x.com/earthtothien"><span class="text-hover">Twitter</span></a></p>
-    <p><a href="https://www.threads.net/@earthtothien"><span class="text-hover">Threads</span></p>
-</div>
+    <p><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 8px;">Email</span></a></p>
+    <p><a href="https://bsky.app/profile/earthtothien.bsky.social"><i class="fa-brands fa-bluesky" style="color: #74C0FC;"></i><span class="text-hover" style="padding-left: 8px;">Bluesky</span></a></p>
+    <p><a href="https://x.com/earthtothien"><i class="fa-brands fa-x-twitter"></i><span class="text-hover" style="padding-left: 8px;">Twitter</span></a></p>
+    <p><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 8px;">Threads</span></a></p>
 </div>
 </html>
