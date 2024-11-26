@@ -131,7 +131,7 @@ button{
     padding-right: 12px;
     text-align: left;
     display: inline-block;
-    font-size: 12px;
+    font-size: 10px;
     cursor: pointer;
     border: 2px solid #000000;
     border-radius: 12px;
@@ -141,7 +141,4 @@ button{
 button:hover{
     background-color: #8cb4ec;
     color: #FFFFFF;
-}
-button:hover ~ i{
-    color: #ec3c49;
 }
