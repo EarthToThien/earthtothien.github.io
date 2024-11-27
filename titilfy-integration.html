@@ -16,6 +16,28 @@
 
 <div class="body-content">
 
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<hr>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Get_Access_Token" class="text-hover">Get Access Token</a></li>
+        <li><a href="#List_Donations" class="text-hover">List Donations</a></li>
+        <li><a href="#List_Donations_Methods" class="text-hover">List Donations Methods</a></li>
+        <ul class="ul-indent">
+            <li><a href="#Sub-Action_Method" class="text-hover">Option A: Sub-Action Method</a></li>
+            <li><a href="#C#_Method" class="text-hover">Option B: C# Method</a></li>
+    </ul>
+    <li><a href="#Alerts" class="text-hover">Alerts</a></li>
+    <li><a href="#Total_Raised" class="text-hover">Total Raised</a></li>
+    </ul>
+    <li><a href="#Changelog" class="text-hover">Changelog</a></li>    
+</ul>
+<br>
+
 <h2 id="Introduction">Introduction</h2>
 <hr>
 <p>This site is a detailed overview of the Tiltify Integration Extension for Streamer.Bot. The purpose of this extension is to serve as a foundation for streamers to connect their Streamer.Bot client to Tiltify and to have their own custom actions be triggered by donations to their Tiltify charity campaign.</p>
@@ -24,7 +46,7 @@
 
 <h2 id="Requirements">Requirements</h2>
 <hr>
-<ul>
+<ul style="padding-left: 16px;">
     <li><strong>Tiltify Account</strong> - User will need a Tiltify account in order to gain the necessary access to Tiltify.</li>
     <li><strong>Tiltify Campaign</strong> - User must have an active Tiltify campaign in order for the extension to work properly.</li>
 </ul>
@@ -33,7 +55,7 @@
 
 <h2 id="Download_Code">Download Code</h2>
 <hr>
-<button onclick="location.href='https://extensions.streamer.bot/t/tiltify-integration/250'" type="button">
+<button onclick="location.href='https://ko-fi.com/s/7d7437c1c9'" type="button">
     <p><strong>Tiltify-Streamer.Bot Integration</strong>
     <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 8px;"></i>EarthToThien's Ko-fi Shop</p>
 </button>
@@ -144,15 +166,13 @@
     <figcaption><strong>Figure 5</strong>: Timed Actions settings for the <span class="text-yellow">List Donations</span> action.</figcaption>
 </figure>
 
-<br>
-
 <h3 id="List_Donations_Methods">List Donations Methods</h3>
 <table class="center">
     <caption><strong>Table 2</strong>: Pros and cons of Sub-Action Method and C# Method.</caption>
     <tr>
         <th></th>
-        <th><strong>Sub-Action Method</strong></th>
-        <th><strong>C# Method</strong></th>
+        <th><strong><a href="#Sub-Action_Method" class="text-hover">Sub-Action Method</a></strong></th>
+        <th><strong><a href="#C#_Method" class="text-hover">C# Method</a></strong></th>
     </tr>
     <tr>
         <th><strong>Pros</strong></th>
@@ -186,8 +206,6 @@
     </tr>
 </table>
 
-<br>
-
 <h4 id="Sub-Action_Method">Option A: Sub-Action Method</h4>
 <figure style="text-align: center;">
     <img class="img-full" src="https://lh3.googleusercontent.com/d/1eTjhBF4uUi3Mtzp_t6GAVHwdZj3JAGHY" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
@@ -201,8 +219,6 @@
     <img class="img-full" src="https://lh3.googleusercontent.com/d/1Bt8WZmCdy7DDtdvRdVGbo_n1UWEGOX_F" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
     <figcaption><strong>Figure 7</strong>: Example of If/Else setup for the Sub-Action Method of the <span class="text-yellow">List Donation</span> action.</figcaption>
 </figure>
-
-<br>
 
 <h4 id="C#_Method">Option B: C# Method</h4>
 <figure style="text-align: center;">
@@ -249,7 +265,6 @@ else
     <img class="img-full" src="https://lh3.googleusercontent.com/d/1UcCpkkEDX1BMnMC8C_FQWxaBDllK9oB6" alt="Send Message to Twitch action using the donorName and donorAmount argument to send charity message."></img>
     <figcaption><strong>Figure 11</strong>: <strong>Send Message to Twitch Channel</strong> sub-action in the <span class="text-yellow">Generic Alert</span> action. This sub-action is used to send a charity message into chat after every new donation.</figcaption>
 </figure>
-
 <br>
 
 <h3 id="Total_Raised">Total Raised</h3>
@@ -269,29 +284,26 @@ else
         <td><code class="code-red">currentGoal</code></td>
         <td>The current goal set for the Tiltify charity campaign.</td>
     </tr>
- </table>
-
 </table>
-
 <br>
 
 <h2 id="Changelog">Changelog</h2>
 <hr>
 <h3>Version 2.0</h3>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+<ul style="padding-left: 16px;">
+    <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span></li>
+    <li><span class="text-yellow">Recent Donation</span> action renamed to <span class="text-yellow">List Donations</span>.</li>
+    <li><span class="text-yellow">Recent Donation Alert</span> action renamed to <span class="text-yellow">Generic Alert</span>.</li>
+    <li><span class="text-blue">Recent Donation</span> timer renamed to <span class="text-blue">List Doantions</span>.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to perform <code class="code-red">donationId</code> check. The past five <code class="code-red">donationId</code> will now be saved under the glbal argument <code class="code-red">donationIdList_Tiltify</code>. All sub-actions related to <code class="code-red">donationId</code> have been removed.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to include <code class="code-red">donorRewards</code> output argument. This new argument will list the IDs of all the rewards claimed with each donation.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Sub-actions have been updated to account for the two configurations: Sub-Action Method and C# Method (see <a href="#List_Donations_Methods" class="text-hover">List Donation Methods</a> section for more details)</li>
+    <li><span text="'text-yellow">List Donations</span> updated. The <strong>Get Global (<code class="code-red">accessToken</code>)</strong>, <strong>If/Else</strong>, and <strong>Get Global (<code class="code-red">publicId</code>)</strong> sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <span class="text-yellow">Generic Alert</span> action.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include <code class="code-red">donorRewards</code> argument.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <span class="text-yellow">Get Access Token</span> action if current <span class="text-red">Access Token</span>.</li>
+    <li><span class="text-yellow">Total Raised</span> action updated. <strong>Execute Code (Tiltify Total Raised)</strong> updated to include <code class="code-red">currentGoal</code> output argument. This argument provides the current charity campaign goal set in Tiltify.</li>
 </ul>
-
 <br>
 
 <h2 id="Suport">Support</h2>
@@ -299,7 +311,6 @@ else
     <p><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch" style="color: #B197FC;"></i><span class="text-hover" style="padding-left: 8px;">Twitch</span></a></p>
     <p><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i><span class="text-hover" style="padding-left: 8px;">YouTube</span></a></p>
     <p><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 8px;">Ko-fi</span></a></p>
-
 <br>
 
 <h2 id="Contact">Contact</h2>
@@ -308,5 +319,6 @@ else
     <p><a href="https://bsky.app/profile/earthtothien.bsky.social"><i class="fa-brands fa-bluesky" style="color: #74C0FC;"></i><span class="text-hover" style="padding-left: 8px;">Bluesky</span></a></p>
     <p><a href="https://x.com/earthtothien"><i class="fa-brands fa-x-twitter"></i><span class="text-hover" style="padding-left: 8px;">Twitter</span></a></p>
     <p><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 8px;">Threads</span></a></p>
+<br>
 </div>
 </html>

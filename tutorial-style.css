@@ -37,6 +37,19 @@ hr{
     background-color: gray;
 }
 
+.ul-toc{
+    list-style: none;
+    padding-left: 0px;
+}
+.ul-indent{
+    list-style: none;
+    padding-left: 16px;
+}
+
+li{
+    margin: 8px;
+}
+
 .text-hover:hover {
     text-decoration: underline;
 }
@@ -124,7 +137,6 @@ figcaption{
     font-size: 14px;
     text-align: left;
 }
-
 
 button{
     padding-left: 12px;
