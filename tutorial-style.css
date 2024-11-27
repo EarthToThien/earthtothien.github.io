@@ -116,9 +116,10 @@ th{
 
 iframe{
     display:block;
+    border: 0px;
     margin-left: auto;
     margin-right: auto;
-    width: 640px;
+    width: 100%;
     height: 360px;
 }
 
