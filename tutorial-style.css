@@ -114,15 +114,6 @@ th{
 	background-color: #87837826;  
 }
 
-iframe{
-    display:block;
-    border: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 428px;
-    height: 241px;
-}
-
 img{
     max-width: 100%;
     height: auto;
