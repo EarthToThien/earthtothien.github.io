@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Timed Actions (Messages)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tutorial-style.css"/>
+    <link rel="stylesheet" href="prism.css"/>
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="header">
+    <h1 style="font-size: 68px;">Timed Actions (Messages)</h1>
+</div>
+<br>
+
+<div class="body-content">
+
+<p><a href="index.html" class="text-hover">Home</a> &gt; Timed Actions (Messages)</p>
+
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<hr>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Download Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Set_Order" class="text-hover">Set Order</a></li>
+        <li><a href="#Random_Order" class="text-hover">Random Order</a></li>
+    </ul>
+</ul>
+<br>
+
+<h2 id="Introduction">Introduction</h2>
+<hr>
+<p>This is a detailed overview for the Timed Actions extension for Streamer.Bot. This extension is primarily used for non-repeating timed messages in the streamer’s chat, but it can also be repurposed to trigger other random actions outside of chat messages.</p>
+<br>
+
+<h2 id="Download_Code">Download Code</h2>
+<hr>
+<button onclick="location.href='https://ko-fi.com/s/ed84fb2c2c'" type="button">
+    <p><strong>Timed Actions for Streamer.Bot</strong>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 8px;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+<br>
+
+<h2 id="Installation">Installation</h2>
+<hr>
+<p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the downloaded Import Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
+
+<figure style="text-align: center;">
+    <img class="img-60" src="https://lh3.googleusercontent.com/d/17AyP_O5z7rmltfzqtu6pXWEGHQJPrzzC" alt="Streamer.Bot import window after importing Timed Actions (Messages) code.">
+    <figcaption><strong>Figure 1</strong>: Streamer.Bot import window after importing Timed Actions (Messages) code.</figcaption>
+</figure>
+
+<p>After importing the extension, the following actions should appear in the Streamer.Bot client:</p>
+
+<ul>
+    <li>Timed Message 1</li>
+    <li>Timed Message 2</li>
+    <li>Timed Message 3</li>
+    <li>Timed Messages - Random Order</li>
+    <li>Timed Messages - Set Order</li>
+</ul>
+<br>
+
+<h2 id="Configuration">Configuration</h2>
+<hr>
+<p><span class="text-yellow">Timed Message 1-3</span></p> are the different actions triggered when sending different messages to the streamer's chat. It is recommended that each message/sub-action be assigned its own <span class="text-yellow">Timed Message</span> action.
+
+<figure style="text-align: center;">
+    <img class="img-60" src="https://lh3.googleusercontent.com/d/1jIQF6BVVKGoQtHIsdVmp9ctQ70UmvxHU" alt="Example of Streamer.Bot setup to trigger the Timed Actions extension. Left image shows how to select the Timed Actions trigger. Right image shows example settings for the Timed Action.">
+    <figcaption><strong>Figure 2</strong>: Example of Streamer.Bot setup to trigger the Timed Actions extension.</figcaption>
+</figure>
+<br>
+
+<h3 id="Set_Order">Set Order</h3>
+<hr>
+<p>Messages/Actions will trigger in the order according to how the <span class="text-yellow">Timed Message</span> actions are labeled. Set the <code class="code-red">messageMax</code> argument equal to the number of <span class="text-yellow">Timed Message</span> actions and set a repeating timer to trigger <span class="text-yellow">Set Order</span> action.</p>
+
+<figure style="text-align: center;">
+    <img class="img-80" src="https://lh3.googleusercontent.com/d/1BnjTkzMRkd73LWEXtU74EkZtF2cnzq75" alt="Sub-Actions setup for the Set Order configuration of the Timed Actions (Messages) extension.">
+    <figcaption><strong>Figure 3</strong>: Sub-Actions setup for the <span class="text-yellow">Set Order</span> action.</figcaption>
+</figure>
+<br>
+
+<h3 id="Random_Order">Random Order</h3>
+<hr>
+<p>Messages/Actions will trigger in random order. Set the <code class="code-red">messageCount</code> argument eual to the number of <span class="text-yellow">Timed Message</span> actions and set a repeating timer to trigger the <span class="text-yellow">Random Order</span> action.</p>
+
+<figure style="text-align: center;">
+    <img class="img-80" src="https://lh3.googleusercontent.com/d/1jouXb-eItQ0Ho23M1fuNNimt2pgAp-Jk" alt="Sub-Actions setup for the Random Order configuration of the Timed Actions (Messages) extension.">
+    <figcaption><strong>Figure 4</strong>: Sub-Actions setup for the <span class="text-yellow">Random Order</span> action.</figcaption>
+</figure>
+<br>
+
+<h2 id="Support">Support</h2>
+<hr>
+    <p><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch" style="color: #B197FC;"></i><span class="text-hover" style="padding-left: 8px;">Twitch</span></a></p>
+    <p><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i><span class="text-hover" style="padding-left: 8px;">YouTube</span></a></p>
+    <p><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 8px;">Ko-fi</span></a></p>
+<br>
+
+<h2 id="Contact">Contact</h2>
+<hr>
+    <p><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 8px;">Email</span></a></p>
+    <p><a href="https://bsky.app/profile/earthtothien.bsky.social"><i class="fa-brands fa-bluesky" style="color: #74C0FC;"></i><span class="text-hover" style="padding-left: 8px;">Bluesky</span></a></p>
+    <p><a href="https://x.com/earthtothien"><i class="fa-brands fa-x-twitter"></i><span class="text-hover" style="padding-left: 8px;">Twitter</span></a></p>
+    <p><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 8px;">Threads</span></a></p>
+<br>
+</div>
+</html>

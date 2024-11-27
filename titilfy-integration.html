@@ -16,6 +16,8 @@
 
 <div class="body-content">
 
+    <p><a href="index.html" class="text-hover">Home</a> &gt; Tiltify Integration</p>
+
 <h2 id="Table_of_Contents">Table of Contents</h2>
 <hr>
 <ul class="ul-toc">
@@ -41,7 +43,6 @@
 <h2 id="Introduction">Introduction</h2>
 <hr>
 <p>This site is a detailed overview of the Tiltify Integration Extension for Streamer.Bot. The purpose of this extension is to serve as a foundation for streamers to connect their Streamer.Bot client to Tiltify and to have their own custom actions be triggered by donations to their Tiltify charity campaign.</p>
-
 <br>
 
 <h2 id="Requirements">Requirements</h2>
@@ -50,7 +51,6 @@
     <li><strong>Tiltify Account</strong> - User will need a Tiltify account in order to gain the necessary access to Tiltify.</li>
     <li><strong>Tiltify Campaign</strong> - User must have an active Tiltify campaign in order for the extension to work properly.</li>
 </ul>
-
 <br>
 
 <h2 id="Download_Code">Download Code</h2>
@@ -91,7 +91,6 @@
     </ul>
 </ul>
 <p><span class="text-yellow">Access Token</span> and <span class="text-yellow">List Donations</span> are the main actions for the extension. <span class="text-yellow">Generic Alert</span> is an example alert action that can be used as a simple alert or an alert action template. <span class="text-yellow">Total Raised</span> is an optional action if the user wants to display the current amount raised and the current goal for the Tiltify campaign. Under the Timed Actions Tab (Settings > Timed Actions), the <span class="text-blue">Tiltify - List Donations</span> timer is disabled. Once configuration is complete and all alert actions are linked to the extension, the timer needs to be enabled to begin polling Tiltify.</p>
-
 <br>
 
 <h2 id="Configuration">Configuration</h2>
@@ -117,14 +116,12 @@
     <img class="img-80" src="https://lh3.googleusercontent.com/d/1C0wDdLEH2PJYuZY6-XA7eh3rl56nNwDS" alt="Tiltify Campaign ID needed for Streamer.Bot Tiltify extension.">
     <figcaption><strong>Figure 4</strong>: The public ID is required to link the Tiltify campaign to the Streamer.Bot extension. This allows data to be obtained from the active campaign.</figcaption>
 </p>
-
 <br>
 
 <h3 id="List_Donations">List Donations</h3>
 <p>The <span class="text-yellow">List Donations</span> action serves as the trigger for all donation-based alerts. There is a repeating timer called <span class="text-blue">Tiltify - List Donations</span> that serves as the trigger for the <span class="text-yellow">List Donations</span> action. With each trigger, the <span class="text-yellow">List Donations</span> action polls Tiltify for the latest donation data from the current connected Tiltify campaign. This timer can be adjusted in the Streamer.Bot client under Settings > Timed Actions and is defaulted at 2 second intervals.</p>
 
 <p>Under the <span class="text-yellow">List Donations</span> action, the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action polls data from Tiltify and generates arguments using data from the most recent donation in the Tiltify charity campaign (see table below). These arguments are used in later sub-actions and can be used in alert actions. With each polling, <code class="code-red">donationIdList_Tiltify</code>, which lists the <code class="code-red">donationId</code> of the last five donations, is checked to see if it contains the <code class="code-red">donationId</code> of the most recent Tiltify donation data. If the list does not contain it, <code class="code-red">donationIdList_Tiltify</code> is updated to add the new donationId and remove the oldest donationId from the list. The other arguments are then generated, and the set alert actions are triggered.</p>
-
 <br>
 
 <table class="center">
@@ -306,7 +303,7 @@ else
 </ul>
 <br>
 
-<h2 id="Suport">Support</h2>
+<h2 id="Support">Support</h2>
 <hr>
     <p><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch" style="color: #B197FC;"></i><span class="text-hover" style="padding-left: 8px;">Twitch</span></a></p>
     <p><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i><span class="text-hover" style="padding-left: 8px;">YouTube</span></a></p>
