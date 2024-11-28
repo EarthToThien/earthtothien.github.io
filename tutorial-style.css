@@ -118,17 +118,16 @@ img{
     max-width: 68%;
     height: auto;
 }
-.img-small{
-    max-width: 56%;
-    height: auto;
-}
 
 figure{
+    display: inline-block;
     text-align: center;
 }
-
-caption,
 figcaption{
+    font-size: 14px;
+    text-align: center;
+}
+caption{
     font-size: 14px;
     text-align: left;
 }
