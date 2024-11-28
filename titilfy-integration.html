@@ -66,7 +66,7 @@
 <p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the downloaded Import Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
 
 <figure>
-    <img class="img-60" src="https://lh3.googleusercontent.com/d/1z_XfCKiIksdva5MTLNdFulSyF-ZkMKqw" alt="Streamer.Bot Import Window">
+    <img src="https://lh3.googleusercontent.com/d/15FF4-TOzAOqdcuSx3a_EcaQ2OKK6BL6q" alt="Streamer.Bot Import Window">
     <figcaption><strong>Figure 1</strong>: Streamer.Bot import window</figcaption>
 </figure>
 
@@ -98,21 +98,21 @@
 <p>In order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> for the <span class="text-yellow">Get Access Token</span> action, a Tiltify account is required. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application, but it is not required for the extension function. For this, <code class="code-red">http://localhost</code> is used as shown in Figure 2.</p>
 
 <figure>
-    <img class="img-40" src="https://lh3.googleusercontent.com/d/1aYqxRqRAoaGCbCpLCUFtZjETbU4U9TY8" alt="Tiltify Create App page">
+    <img src="https://lh3.googleusercontent.com/d/1CPi5xocrTZiTfxHmJwP_Fn4OdU7GVwCf" alt="Tiltify Create App page">
     <figcaption><strong>Figure 2</strong>: Tiltify Create Application window, located under the Developer hub</figcaption>
 </figure>
 
 <p>After creating an app, a notification will appear indicating that the app was made successfully. Further down the page, there is a blurred section called “Application keys” that will provide the <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> that are required for the extension to generate an <span class="text-red">Access Token</span> (<code class="code-red">accessToken_Tiltify</code>) for Tiltify access. The corresponding sub-actions under the <span class="text-yellow">Get Access Token</span> action are then populated with the acquired information (Figure 3).</p>
 
 <figure>
-    <img class="img-80" src="https://lh3.googleusercontent.com/d/1GFLUkslPG7J6oyBZAvkEHDCS_WmjC414" alt="Tiltify Application keys needed for the Streamer.Bot Tiltify extension.">
+    <img src="https://lh3.googleusercontent.com/d/1Ulf01sYYarRM0PFKHcbr2wOqf5R34B2D" alt="Tiltify Application keys needed for the Streamer.Bot Tiltify extension.">
     <figcaption><strong>Figure 3</strong>: The Tiltify Application keys are required for the Streamer.Bot client to generate an access token to poll Tiltify.</figcaption>
 </figure>
 
 <p>The extension also requires the user to have an active or published Tiltify charity campaign. From the Tiltify campaign dashboard, the public ID can be found under Information tab of Setup (Figure 4).</p>
 
 <p style="text-align: center;">
-    <img class="img-80" src="https://lh3.googleusercontent.com/d/1C0wDdLEH2PJYuZY6-XA7eh3rl56nNwDS" alt="Tiltify Campaign ID needed for Streamer.Bot Tiltify extension.">
+    <img src="https://lh3.googleusercontent.com/d/1nDjWvoNIuV2HIMp4RrifxTBgQuERqzJm" alt="Tiltify Campaign ID needed for Streamer.Bot Tiltify extension.">
     <figcaption><strong>Figure 4</strong>: The public ID is required to link the Tiltify campaign to the Streamer.Bot extension. This allows data to be obtained from the active campaign.</figcaption>
 </p>
 </section>
@@ -158,7 +158,7 @@
 <p>There are two methods to trigger alert actions built into the <span class="text-yellow">List Donations</span> action: Sub-Action Method and C# Method. Both methods are dependent on user preference and the complexity of the alert action triggers. The <span class="text-yellow">List Donations</span> action has two different configurations based on the selected trigger alert method used. The Sub-Action Method and C# Method both are functionally similar, but depending on the complexity of the conditions to trigger alerts, the C# Method may be the recommended configuration. If based solely on conditions surrounding the <code class="code-red">donorAmount</code> argument, the Sub-Action Method will provide a simpler setup. Once alert actions are linked to the <span class="text-yellow">List Donations</span> action, the <span class="text-blue">Tiltify - List Donations</span> timer located under Settings > Timed Actions needs to be enabled in order to begin polling Tiltify (Figure 5).</p>
 
 <figure>
-    <img class="img-60" src="https://lh3.googleusercontent.com/d/1FkjQK0EdI5g90KSipXYGoykKXW1jeblv" alt="Timed Actions window in Streamer.Bot showing the Timed Action settings for the List Donations action.">
+    <img src="https://lh3.googleusercontent.com/d/1UqrkCOQmPAXbBJ9mzFdWBhog9aeuDzAA" alt="Timed Actions window in Streamer.Bot showing the Timed Action settings for the List Donations action.">
     <figcaption><strong>Figure 5</strong>: Timed Actions settings for the <span class="text-yellow">List Donations</span> action.</figcaption>
 </figure>
 </section>
@@ -208,7 +208,7 @@
 <section>
 <h4 id="Sub-Action_Method">Option A: Sub-Action Method</h4>
 <figure>
-    <img class="img-full" src="https://lh3.googleusercontent.com/d/1eTjhBF4uUi3Mtzp_t6GAVHwdZj3JAGHY" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
+    <img class="img-small" src="https://lh3.googleusercontent.com/d/1dDQnl3bt0OrzzmhEiXTdrqoE3Hme63bD" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
     <figcaption><strong>Figure 6</strong>: Sub-Action Method configuration for the <span class="text-yellow">List Donations</span> action. This is the default configuration for the Sub-Actions in red text are set to disabled.</figcaption>
 </figure>
 
@@ -216,7 +216,7 @@
 <p>For different triggered alert actions under the Sub-Action Method, the <strong>If/Else</strong> sub-action is used to set different conditions for alerts as shown in the example in Figure 7. For each <strong>If/Else</strong> sub-action used, a “Break” must be set if the condition is met, otherwise “Continue” to check the next condition. If <code class="code-red">donorAmount</code> is used for the conditions of the <strong>If/Else</strong> sub-actions, it is recommended that sub-actions be organized in descending order especially if comparatives (greater than, less than, etc.) are used. The last sub-action can be a <strong>Run Action</strong> sub-action for all donations that do not meet any of the established conditions.</p>
 
 <figure>
-    <img class="img-full" src="https://lh3.googleusercontent.com/d/1Bt8WZmCdy7DDtdvRdVGbo_n1UWEGOX_F" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
+    <img src="https://lh3.googleusercontent.com/d/1Z48-shsH7LVOvpdLzrucyNRksxXUUqPi/" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
     <figcaption><strong>Figure 7</strong>: Example of If/Else setup for the Sub-Action Method of the <span class="text-yellow">List Donation</span> action.</figcaption>
 </figure>
 </section>
@@ -224,7 +224,7 @@
 <section>
 <h4 id="C#_Method">Option B: C# Method</h4>
 <figure>
-    <img class="img-full" src="https://lh3.googleusercontent.com/d/1SpBphgdA42oePzrBFRHP66C00ziKvZWB" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled."></img>
+    <img class="img-small" src="https://lh3.googleusercontent.com/d/1ZFT3wowdf13zESsbY8B9k6tFMSwM90Ob" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled."></img>
     <figcaption><strong>Figure 8</strong>: C# Method configuration for the <span class="text-yellow">List Donation</span> action. Sub-actions in red text are set to disabled.</figcaption>
 </figure>
 
@@ -260,12 +260,12 @@ else
 <p>Alert actions are triggered based on the conditions set in the <span class="text-yellow">List Donations</span> action. When triggered, alert actions will have access to all the arguments generated by the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action in the <span class="text-yellow">List Donations</span> action (see table in <a class="text-hover" href="#List_Donations">List Donations</a> section). The <span class="text-yellow">Generic Alert</span> action is a simple example of how these arguments may be used (Figure 10). For the <strong>Send Message to Twitch Channel</strong> sub-action, the arguments <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> are used in a message to be sent to the Twitch chat (Figure 11).</p>
 
 <figure>
-    <img class="img-full" src="https://lh3.googleusercontent.com/d/1MGyrdj8fhbauJdjFz-HjkGzjKOMo5F7e" alt="Sub-action list for Generic Alert action.with the Send Message to Twitch Channel sub-action using the donorName and donorAmount arguments."></img>
+    <img class="img-small" src="https://lh3.googleusercontent.com/d/1ybpJ7ItZnrRvnXmiUw_IQ-cj5l0yjneo" alt="Sub-action list for Generic Alert action.with the Send Message to Twitch Channel sub-action using the donorName and donorAmount arguments."></img>
     <figcaption><strong>Figure 10</strong>: Sub-Action list for <span class="text-yellow">Generic Alert</span> action is a simple <strong>Send Message to Twitch Channel</strong> sub-action using the <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> arguments.</figcaption>
 </figure>
 
 <figure>
-    <img class="img-full" src="https://lh3.googleusercontent.com/d/1UcCpkkEDX1BMnMC8C_FQWxaBDllK9oB6" alt="Send Message to Twitch action using the donorName and donorAmount argument to send charity message."></img>
+    <img class="img-small" src="https://lh3.googleusercontent.com/d/1VBOiuTN27JX7Plxwuf_aDpPlEGHga1Ic" alt="Send Message to Twitch action using the donorName and donorAmount argument to send charity message."></img>
     <figcaption><strong>Figure 11</strong>: <strong>Send Message to Twitch Channel</strong> sub-action in the <span class="text-yellow">Generic Alert</span> action. This sub-action is used to send a charity message into chat after every new donation.</figcaption>
 </figure>
 </section>

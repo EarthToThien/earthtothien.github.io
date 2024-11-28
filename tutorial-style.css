@@ -115,19 +115,11 @@ th{
 }
 
 img{
-    max-width: 76%;
+    max-width: 68%;
     height: auto;
 }
-.img-80{
-    max-width: 80%;
-    height: auto;
-}
-.img-60{
-    max-width: 60%;
-    height: auto;
-}
-.img-40{
-    max-width: 40%;
+.img-small{
+    max-width: 56%;
     height: auto;
 }
 
