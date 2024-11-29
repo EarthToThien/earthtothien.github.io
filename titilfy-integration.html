@@ -70,7 +70,7 @@
 <p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the downloaded Import Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
 
 <figure>
-    <img src="Tiltify Integration/01 Import Window.webp" alt="Streamer.Bot Import Window" style="max-width: 80%; height: auto">
+    <img src="Tiltify Integration/01 Import Window.webp" alt="Streamer.Bot Import Window" style="max-width: 64%; height: auto;">
     <figcaption><strong>Figure 1</strong>: Streamer.Bot import window</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@
 <p>In order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> for the <span class="text-yellow">Get Access Token</span> action, a Tiltify account is required. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application, but it is not required for the extension function. For this, <code class="code-red">http://localhost</code> is used as shown in Figure 2.</p>
 
 <figure>
-    <img src="Tiltify Integration/02 Tiltify Create App.webp" alt="Tiltify Create App page" style="max-width: 45%; height:auto">
+    <img src="Tiltify Integration/02 Tiltify Create App.webp" alt="Tiltify Create App page" style="max-width: 64%; height: auto;">
     <figcaption><strong>Figure 2</strong>: Tiltify Create Application window, located under the Developer hub</figcaption>
 </figure>
 
@@ -208,7 +208,7 @@
 <section>
 <h4 id="Sub-Action_Method">Option A: Sub-Action Method</h4>
 <figure>
-    <img src="Tiltify Integration/06 Sub-Action Method.webp" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension." class="img-full"></img>
+    <img src="Tiltify Integration/06 Sub-Action Method.webp" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
     <figcaption><strong>Figure 6</strong>: Sub-Action Method configuration for the <span class="text-yellow">List Donations</span> action. This is the default configuration for the Sub-Actions in red text are set to disabled.</figcaption>
 </figure>
 
@@ -216,7 +216,7 @@
 <p>For different triggered alert actions under the Sub-Action Method, the <strong>If/Else</strong> sub-action is used to set different conditions for alerts as shown in the example in Figure 7. For each <strong>If/Else</strong> sub-action used, a “Break” must be set if the condition is met, otherwise “Continue” to check the next condition. If <code class="code-red">donorAmount</code> is used for the conditions of the <strong>If/Else</strong> sub-actions, it is recommended that sub-actions be organized in descending order especially if comparatives (greater than, less than, etc.) are used. The last sub-action can be a <strong>Run Action</strong> sub-action for all donations that do not meet any of the established conditions.</p>
 
 <figure>
-    <img src="Tiltify Integration/07 If-Else Sub-Action Method.webp" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount." class="img-full"></img>
+    <img src="Tiltify Integration/07 If-Else Sub-Action Method.webp" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
     <figcaption><strong>Figure 7</strong>: Example of If/Else setup for the Sub-Action Method of the <span class="text-yellow">List Donation</span> action.</figcaption>
 </figure>
 </section>
@@ -224,7 +224,7 @@
 <section>
 <h4 id="C#_Method">Option B: C# Method</h4>
 <figure>
-    <img src="Tiltify Integration/08 CSharp Method.webp" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled." class="img-full"></img>
+    <img src="Tiltify Integration/08 CSharp Method.webp" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled."></img>
     <figcaption><strong>Figure 8</strong>: C# Method configuration for the <span class="text-yellow">List Donation</span> action. Sub-actions in red text are set to disabled.</figcaption>
 </figure>
 
