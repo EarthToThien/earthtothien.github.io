@@ -115,7 +115,11 @@ th{
 }
 
 img{
-    max-width: 68%;
+    max-width: 72%;
+    height: auto;
+}
+.img-full{
+    max-width: 100%;
     height: auto;
 }
 
