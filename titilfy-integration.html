@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Tiltify Integration Extension</title>
+    <meta name="Description" content="Streamer.Bot Tiltify Integration Extension">
+    <meta name="keywords" content="Streamer.Bot, Tiltify, extension, charity, alerts, overlay, chatbot">
+    <meta name="author" content="EarthToThien">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/tutorial-style.css"/>
+    <link rel="stylesheet" href="assets/css/prism.css"/>
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <link rel="preload" as="image" href="gradient.webp">
+    <h1 style="font-size: 68px;">Tiltify Integration Extension</h1>
+</header>
+
+<div class="body-content">
+
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Tiltify Integration</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Get_Access_Token" class="text-hover">Get Access Token</a></li>
+        <li><a href="#List_Donations" class="text-hover">List Donations</a></li>
+        <li><a href="#List_Donations_Methods" class="text-hover">List Donations Methods</a></li>
+        <ul class="ul-indent">
+            <li><a href="#Sub-Action_Method" class="text-hover">Option A: Sub-Action Method</a></li>
+            <li><a href="#C#_Method" class="text-hover">Option B: C# Method</a></li>
+    </ul>
+    <li><a href="#Alerts" class="text-hover">Alerts</a></li>
+    <li><a href="#Total_Raised" class="text-hover">Total Raised</a></li>
+    </ul>
+    <li><a href="#Changelog" class="text-hover">Changelog</a></li>    
+</ul>
+</div>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview of the Tiltify Integration Extension for Streamer.Bot. The purpose of this extension is to serve as a foundation for streamers to connect their Streamer.Bot client to Tiltify and to have their own custom actions be triggered by donations to their Tiltify charity campaign.</p>
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 16px;">
+    <li><strong>Tiltify Account</strong> - User will need a Tiltify account in order to gain the necessary access to Tiltify.</li>
+    <li><strong>Tiltify Campaign</strong> - User must have an active Tiltify campaign in order for the extension to work properly.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/s/7d7437c1c9')" type="button">
+    <p><strong>Tiltify Integration for Streamer.Bot</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 8px;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the downloaded Import Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/01 Import Window.webp" alt="Streamer.Bot Import Window" style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Streamer.Bot import window</figcaption>
+</figure>
+
+<p>After importing the extension, the following items should appear in the Streamer.Bot client under the corresponding tabs:</p>
+<ul>
+    <li><strong>Actions Tab</strong></li>    
+    <ul>
+        <li>Tiltify - Generic Alert</li>
+        <li>Tiltify - Get Access Token</li>
+        <li>Tiltify - List Donations</li>
+        <li>Tiltify - Total Raised</li>
+    </ul>
+    <li><strong>Queues Tab</strong></li>
+    <ul>
+        <li>Tiltify - Access Token</li>
+        <li>Tiltify</li>
+    </ul>
+    <li><strong>Timed Actions Tab</strong></li>
+    <ul>
+        <li>Tiltify - List Donations</li>
+    </ul>
+</ul>
+<p><span class="text-yellow">Access Token</span> and <span class="text-yellow">List Donations</span> are the main actions for the extension. <span class="text-yellow">Generic Alert</span> is an example alert action that can be used as a simple alert or an alert action template. <span class="text-yellow">Total Raised</span> is an optional action if the user wants to display the current amount raised and the current goal for the Tiltify campaign. Under the Timed Actions Tab (Settings > Timed Actions), the <span class="text-blue">Tiltify - List Donations</span> timer is disabled. Once configuration is complete and all alert actions are linked to the extension, the timer needs to be enabled to begin polling Tiltify.</p>
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<h3 id="Get_Access_Token">Get Access Token</h3>
+<p>In order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> for the <span class="text-yellow">Get Access Token</span> action, a Tiltify account is required. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application, but it is not required for the extension function. For this, <code class="code-red">http://localhost</code> is used as shown in Figure 2.</p>
+
+<figure>
+    <img src="images/Tiltify Integration/02 Tiltify Create App.webp" alt="Tiltify Create App page" style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Tiltify Create Application window, located under the Developer hub</figcaption>
+</figure>
+
+<p>After creating an app, a notification will appear indicating that the app was made successfully. Further down the page, there is a blurred section called “Application keys” that will provide the <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> that are required for the extension to generate an <span class="text-red">Access Token</span> (<code class="code-red">accessToken_Tiltify</code>) for Tiltify access. The corresponding sub-actions under the <span class="text-yellow">Get Access Token</span> action are then populated with the acquired information (Figure 3).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/03 App Keys.webp" alt="Tiltify Application keys needed for the Streamer.Bot Tiltify extension.">
+    <figcaption><strong>Figure 3</strong>: The Tiltify Application keys are required for the Streamer.Bot client to generate an access token to poll Tiltify.</figcaption>
+</figure>
+
+<p>The extension also requires the user to have an active or published Tiltify charity campaign. From the Tiltify campaign dashboard, the public ID can be found under Information tab of Setup (Figure 4).</p>
+
+<p style="text-align: center;">
+    <img src="images/Tiltify Integration/04 Campaign ID.webp" alt="Tiltify Campaign ID needed for Streamer.Bot Tiltify extension.">
+    <figcaption><strong>Figure 4</strong>: The public ID is required to link the Tiltify campaign to the Streamer.Bot extension. This allows data to be obtained from the active campaign.</figcaption>
+</p>
+</section>
+
+<section>
+<h3 id="List_Donations">List Donations</h3>
+<p>The <span class="text-yellow">List Donations</span> action serves as the trigger for all donation-based alerts. There is a repeating timer called <span class="text-blue">Tiltify - List Donations</span> that serves as the trigger for the <span class="text-yellow">List Donations</span> action. With each trigger, the <span class="text-yellow">List Donations</span> action polls Tiltify for the latest donation data from the current connected Tiltify campaign. This timer can be adjusted in the Streamer.Bot client under Settings > Timed Actions and is defaulted at 2 second intervals.</p>
+
+<p>Under the <span class="text-yellow">List Donations</span> action, the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action polls data from Tiltify and generates arguments using data from the most recent donation in the Tiltify charity campaign (see table below). These arguments are used in later sub-actions and can be used in alert actions. With each polling, <code class="code-red">donationIdList_Tiltify</code>, which lists the <code class="code-red">donationId</code> of the last five donations, is checked to see if it contains the <code class="code-red">donationId</code> of the most recent Tiltify donation data. If the list does not contain it, <code class="code-red">donationIdList_Tiltify</code> is updated to add the new donationId and remove the oldest donationId from the list. The other arguments are then generated, and the set alert actions are triggered.</p>
+
+<table class="center">
+    <caption><strong>Table 1</strong>: All arguments generated by the <span class="text-yellow">List Donations</span> action.</caption>
+    <tr>
+        <th><strong>Argument</strong></th>
+        <th><strong>Description</strong></th>
+    </tr>
+    <tr>
+        <td><code class="code-red">donationId</code></td>
+        <td>Unique identifier assigned to each donation to the Tiltify campaign. This argument is used by the extension to determine whether or not there is a new donation to the Tiltify campaign. The last five <code class="code-red">donationId</code> are saved and used as reference for new donations.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donationDate</code></td>
+        <td>Date and time (UTC) of when donation occurs.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorName</code></td>
+        <td>Name provided with the donation to the Tiltify campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorAmount</code></td>
+        <td>Donation amount (USD) made to the Tiltify campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorComment</code></td>
+        <td>Message that donor included with the donation to the Tiltify campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorRewards</code></td>
+        <td>List of reward IDs of the rewards claimed with each donation to the Tiltify campaign. Each reward created for the Tiltify campaign is assigned a unique ID and appears in the data when claimed with each donation.</td>
+    </tr>
+</table>
+
+<p>There are two methods to trigger alert actions built into the <span class="text-yellow">List Donations</span> action: Sub-Action Method and C# Method. Both methods are dependent on user preference and the complexity of the alert action triggers. The <span class="text-yellow">List Donations</span> action has two different configurations based on the selected trigger alert method used. The Sub-Action Method and C# Method both are functionally similar, but depending on the complexity of the conditions to trigger alerts, the C# Method may be the recommended configuration. If based solely on conditions surrounding the <code class="code-red">donorAmount</code> argument, the Sub-Action Method will provide a simpler setup. Once alert actions are linked to the <span class="text-yellow">List Donations</span> action, the <span class="text-blue">Tiltify - List Donations</span> timer located under Settings > Timed Actions needs to be enabled in order to begin polling Tiltify (Figure 5).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/05 Timer.webp Integration/05 Timer.webp" alt="Timed Actions window in Streamer.Bot showing the Timed Action settings for the List Donations action.">
+    <figcaption><strong>Figure 5</strong>: Timed Actions settings for the <span class="text-yellow">List Donations</span> action.</figcaption>
+</figure>
+</section>
+
+<section>
+<h3 id="List_Donations_Methods">List Donations Methods</h3>
+<table class="center">
+    <caption><strong>Table 2</strong>: Pros and cons of Sub-Action Method and C# Method.</caption>
+    <tr>
+        <th></th>
+        <th><strong><a href="#Sub-Action_Method" class="text-hover">Sub-Action Method</a></strong></th>
+        <th><strong><a href="#C#_Method" class="text-hover">C# Method</a></strong></th>
+    </tr>
+    <tr>
+        <th><strong>Pros</strong></th>
+        <td>
+            Ease of Use
+            <br>
+            Relies only on native sub-actions
+        </td>
+        <td>
+            Fully customizable
+            <br>
+            Access to more conditions to trigger alert actions
+            <br>
+            Access to more functions through the Streamer.Bot C# Methods
+        </td>
+    </tr>
+    <tr>
+        <th><strong>Cons</strong></th>
+        <td>
+            Limited only to conditions with <code class="code-red">donorAmount</code>
+            <br>
+            Limited to native sub-actions
+        </td>
+        <td>
+            Requires knowledge of C# programming
+        </td>
+    </tr>
+</table>
+</section>
+
+<section>
+<h4 id="Sub-Action_Method">Option A: Sub-Action Method</h4>
+<figure>
+    <img src="images/Tiltify Integration/06 Sub-Action Method.webp" alt="Sub-Action Method configuration for the List Donations action. This is the default setting fo the extension."></img>
+    <figcaption><strong>Figure 6</strong>: Sub-Action Method configuration for the <span class="text-yellow">List Donations</span> action. This is the default configuration for the Sub-Actions in red text are set to disabled.</figcaption>
+</figure>
+
+<p>The Sub-Action Method uses native Streamer.Bot sub-actions to trigger alert actions and uses a configuration similar to the example shown in Figure 6. This configuration is provided upon installation of the extension, and if no other alerts will be used, it will be ready to be used as-is. Following the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action, the <strong>Run Action</strong> sub-action triggers the alert actions. If the user only has one action for all donation alerts, the configuration shown in Figure 6 will be sufficient.</p>
+<p>For different triggered alert actions under the Sub-Action Method, the <strong>If/Else</strong> sub-action is used to set different conditions for alerts as shown in the example in Figure 7. For each <strong>If/Else</strong> sub-action used, a “Break” must be set if the condition is met, otherwise “Continue” to check the next condition. If <code class="code-red">donorAmount</code> is used for the conditions of the <strong>If/Else</strong> sub-actions, it is recommended that sub-actions be organized in descending order especially if comparatives (greater than, less than, etc.) are used. The last sub-action can be a <strong>Run Action</strong> sub-action for all donations that do not meet any of the established conditions.</p>
+
+<figure>
+    <img src="images/Tiltify Integration/07 If-Else Sub-Action Method.webp Integration/07 If-Else Sub-Action Method.webp" alt="Example of the Sub-Action Method configuration for the List Donations with variation triggers based on donation amount."></img>
+    <figcaption><strong>Figure 7</strong>: Example of If/Else setup for the Sub-Action Method of the <span class="text-yellow">List Donation</span> action.</figcaption>
+</figure>
+</section>
+
+<section>
+<h4 id="C#_Method">Option B: C# Method</h4>
+<figure>
+    <img src="images/Tiltify Integration/08 CSharp Method.webp" alt="C# Method for the List Donations action. Run Action for Generic Alert is disabled, and Execute Code for Donation Alerts is enabled."></img>
+    <figcaption><strong>Figure 8</strong>: C# Method configuration for the <span class="text-yellow">List Donation</span> action. Sub-actions in red text are set to disabled.</figcaption>
+</figure>
+
+<p>The C# Method uses the <strong>Execute Code (Donation Alerts)</strong> sub-action to trigger all alert actions and uses the configuration as shown in Figure 8. If this method is selected, all sub-actions for the Sub-Action Method must be disabled or removed from the <span class="text-yellow">List Donations</span> action. All of the sub-actions used in the Sub-Action Method are already built into the C# code for the <strong>Execute Code (Donation Alerts)</strong> sub-action. In order to trigger different alert actions, C# conditions and If statements are used as seen in the example below (Figure 9).</p>
+
+<script src="/assets/js/prism.js"></script>
+<pre class="code">
+<code class="language-Csharp">
+//If donorAmount is greater than or equal to $100, trigger Action 3.
+if (donorAmount >= 100m)
+{
+    CPH.RunAction("Tiltify - Alerts - Action 3", true);
+}
+//If donorAmount is greater than or equal to $25, trigger Action 2.
+else if (donorAmount >= 25m)
+{
+    CPH.RunAction("Tiltify - Alerts - Action 2", true);
+}
+//If donorAmount is less than $25, trigger Action 1.
+else
+{
+    CPH.RunAction("Tiltify - Alerts - Action 1", true);
+}
+</code>
+</pre>
+<figcaption><strong>Figure 9</strong>: Example C# code of conditions and If statements to trigger different alert actions. The “m” included with the numbers in the conditions is required when comparing decimals, the numerical format of the <code class="code-red">donorAmount</code> variable.</figcaption>
+
+<p>Once the conditions are satisfied, the native C# method <span class="text-purple">CPH.RunAction</span> is used to trigger the alert action. For more information on native C# methods in Streamer.Bot, refer to the wiki. Similar to the Sub-Action Method, it is recommended that the conditions be set in descending order if <code class="code-red">donorAmount</code> is used.</p>
+</section>
+
+<section>
+<h3 id="Alerts">Alerts</h3>
+<p>Alert actions are triggered based on the conditions set in the <span class="text-yellow">List Donations</span> action. When triggered, alert actions will have access to all the arguments generated by the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action in the <span class="text-yellow">List Donations</span> action (see table in <a class="text-hover" href="#List_Donations">List Donations</a> section). The <span class="text-yellow">Generic Alert</span> action is a simple example of how these arguments may be used (Figure 10). For the <strong>Send Message to Twitch Channel</strong> sub-action, the arguments <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> are used in a message to be sent to the Twitch chat (Figure 11).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/10 Generic Alert.webp" alt="Sub-action list for Generic Alert action.with the Send Message to Twitch Channel sub-action using the donorName and donorAmount arguments." class="img-full"></img>
+    <figcaption><strong>Figure 10</strong>: Sub-Action list for <span class="text-yellow">Generic Alert</span> action is a simple <strong>Send Message to Twitch Channel</strong> sub-action using the <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> arguments.</figcaption>
+</figure>
+
+<figure>
+    <img src="images/Tiltify Integration/11 Send Message.webp" alt="Send Message to Twitch action using the donorName and donorAmount argument to send charity message." class="img-full"></img>
+    <figcaption><strong>Figure 11</strong>: <strong>Send Message to Twitch Channel</strong> sub-action in the <span class="text-yellow">Generic Alert</span> action. This sub-action is used to send a charity message into chat after every new donation.</figcaption>
+</figure>
+</section>
+
+<section>
+<h3 id="Total_Raised">Total Raised</h3>
+<p><span class="text-yellow">Total Raised</span> action is an optional feature that generates the following arguments listed in the following table. These arguments can be used to display the current progress of the Tiltify charity campaign. This action can be run by setting it as the last sub-action for each alert action (see example in Figure 10) or by setting a command or timer as the trigger.</p>
+
+<table class="center">
+    <caption><strong>Table 3</strong>: All arguments generated by the <span class="text-yellow">Total Raised</span> action.</caption>
+    <tr>
+        <th><strong>Argument</strong></th>
+        <th><strong>Description</strong></th>
+    </tr>
+    <tr>
+        <td><code class="code-red">currentTotal</code></td>
+        <td>The current amount raised for the Tiltify charity campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">currentGoal</code></td>
+        <td>The current goal set for the Tiltify charity campaign.</td>
+    </tr>
+</table>
+</section>
+
+<section>
+<h2 id="Changelog">Changelog</h2>
+<h3>Version 2.0</h3>
+<ul style="padding-left: 16px;">
+    <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span></li>
+    <li><span class="text-yellow">Recent Donation</span> action renamed to <span class="text-yellow">List Donations</span>.</li>
+    <li><span class="text-yellow">Recent Donation Alert</span> action renamed to <span class="text-yellow">Generic Alert</span>.</li>
+    <li><span class="text-blue">Recent Donation</span> timer renamed to <span class="text-blue">List Donations</span>.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to perform <code class="code-red">donationId</code> check. The past five <code class="code-red">donationId</code> will now be saved under the glbal argument <code class="code-red">donationIdList_Tiltify</code>. All sub-actions related to <code class="code-red">donationId</code> have been removed.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to include <code class="code-red">donorRewards</code> output argument. This new argument will list the IDs of all the rewards claimed with each donation.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Sub-actions have been updated to account for the two configurations: Sub-Action Method and C# Method (see <a href="#List_Donations_Methods" class="text-hover">List Donation Methods</a> section for more details)</li>
+    <li><span text="'text-yellow">List Donations</span> updated. The <strong>Get Global (<code class="code-red">accessToken</code>)</strong>, <strong>If/Else</strong>, and <strong>Get Global (<code class="code-red">publicId</code>)</strong> sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <span class="text-yellow">Generic Alert</span> action.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include <code class="code-red">donorRewards</code> argument.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <span class="text-yellow">Get Access Token</span> action if current <span class="text-red">Access Token</span>.</li>
+    <li><span class="text-yellow">Total Raised</span> action updated. <strong>Execute Code (Tiltify Total Raised)</strong> updated to include <code class="code-red">currentGoal</code> output argument. This argument provides the current charity campaign goal set in Tiltify.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Support">Support</h2>
+<ul class="ul-toc">
+    <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch" style="color: #B197FC;"></i><span class="text-hover" style="padding-left: 8px;">Twitch</span></a></li>
+    <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i><span class="text-hover" style="padding-left: 8px;">YouTube</span></a></li>
+    <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 8px;">Ko-fi</span></a></li>
+</ul>
+</section>
+
+<section>
+<h2 id="Contact">Contact</h2>
+<ul class="ul-toc">
+    <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 8px;">Email</span></a></li>
+    <li><a href="https://bsky.app/profile/earthtothien.bsky.social"><i class="fa-brands fa-bluesky" style="color: #74C0FC;"></i><span class="text-hover" style="padding-left: 8px;">Bluesky</span></a></li>
+    <li><a href="https://x.com/earthtothien"><i class="fa-brands fa-x-twitter"></i><span class="text-hover" style="padding-left: 8px;">Twitter</span></a></li>
+    <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 8px;">Threads</span></a></li>
+</ul>
+</section>
+</div>
+</html>
