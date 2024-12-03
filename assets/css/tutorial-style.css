@@ -47,7 +47,7 @@ li{
     margin: 8px;
 }
 
-.text-hover:hover {
+.text-hover:hover{
     text-decoration: underline;
 }
 .text-red{
@@ -127,7 +127,7 @@ caption{
     text-align: left;
 }
 
-button{
+.download-button{
     padding-left: 12px;
     padding-right: 12px;
     text-align: left;
@@ -139,7 +139,7 @@ button{
     background-color: #FFFFFF;
     color: #000000;
 }
-button:hover{
+.download-button:hover{
     background-color: #8cb4ec;
     color: #FFFFFF;
 }
