@@ -27,8 +27,7 @@ footer{
     padding-right: 20%;
 }
 .foot-column{
-    flex: 1 10rem;
-    height: 10rem;
+    flex: 1;
 }
 .foot-header{
     font-size: 1.2rem;
