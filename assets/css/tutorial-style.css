@@ -28,8 +28,8 @@ footer{
 }
 .foot-column{
     flex-shrink: 2;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 .foot-header{
     font-size: 1.2rem;
