@@ -22,12 +22,14 @@ body{
 footer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding-top: 2.5rem;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-bottom: 2.5rem;
 }
 .foot-column{
-    flex: 1;
+    flex-shrink: 2;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 .foot-header{
     font-size: 1.2rem;
