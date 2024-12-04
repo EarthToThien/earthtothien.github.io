@@ -27,7 +27,7 @@ footer{
     padding-right: 20%;
 }
 .foot-column{
-    flex: 1 12.5rem;
+    flex: 1 10rem;
     height: 10rem;
 }
 .foot-header{
@@ -166,4 +166,22 @@ caption{
 .download-button:hover{
     background-color: #8cb4ec;
     color: #FFFFFF;
+}
+
+.scroll-to-top{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 99;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 4rem;
+    height: 4rem;
+    font-size: 0.625rem;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.scroll-to-top:hover{
+    background-color: #878378
 }
