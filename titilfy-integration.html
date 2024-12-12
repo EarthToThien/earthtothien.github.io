@@ -290,7 +290,7 @@ else
 <h2 id="Changelog">Changelog</h2>
 <h3>Version 2.0</h3>
 <ul style="padding-left: 1rem;">
-    <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span></li>
+    <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span>.</li>
     <li><span class="text-yellow">Recent Donation</span> action renamed to <span class="text-yellow">List Donations</span>.</li>
     <li><span class="text-yellow">Recent Donation Alert</span> action renamed to <span class="text-yellow">Generic Alert</span>.</li>
     <li><span class="text-blue">Recent Donation</span> timer renamed to <span class="text-blue">List Donations</span>.</li>
@@ -300,7 +300,7 @@ else
     <li><span text="'text-yellow">List Donations</span> updated. The <strong>Get Global (<code class="code-red">accessToken</code>)</strong>, <strong>If/Else</strong>, and <strong>Get Global (<code class="code-red">publicId</code>)</strong> sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
     <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <span class="text-yellow">Generic Alert</span> action.</li>
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include <code class="code-red">donorRewards</code> argument.</li>
-    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <span class="text-yellow">Get Access Token</span> action if current <span class="text-red">Access Token</span>.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <span class="text-yellow">Get Access Token</span> action if current <code class="code-red">accessToken_Tiltify</code>expires.</li>
     <li><span class="text-yellow">Total Raised</span> action updated. <strong>Execute Code (Tiltify Total Raised)</strong> updated to include <code class="code-red">currentGoal</code> output argument. This argument provides the current charity campaign goal set in Tiltify.</li>
 </ul>
 </section>
