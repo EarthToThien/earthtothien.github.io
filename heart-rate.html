@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Template Page</title>
+    <meta name="Description" content="Heart Rate Alerts">
+    <meta name="keywords" content="Streamer.Bot, extension">
+    <meta name="author" content="EarthToThien">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/tutorial-style.css"/>
+    <script src="/assets/js/scroll-top.js" async></script>
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <link rel="preload" as="image" href="gradient.webp">
+    <h1 style="font-size: 4.25rem;">Heart Rate Alerts</h1>
+</header>
+
+<div class="body-content">
+
+<div>
+<p><a href="index.html" class="text-hover">Home</a> > Heart Rate Alerts</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <ul class="ul-indent">
+        <li><a href="#File_Path_Setup" class="text-hover">File Path Setup</a></li>
+        <li><a href="#Trigger_Setup" class="text-hover">Trigger Setup</a></li>
+    </ul>
+</ul>
+</div>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview for the Heart Rate Alerts extension for Streamer.Bot. This extension is for Streamer.Bot to select alerts based off the streamer's current heart rate monitor reading through either the <a href="https://pulsoid.net/" class="text-hover">Pulsoid</a> or <a href="https://www.hyperate.io" class="text-hover">HypeRate</a> integrated apps.</p>
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 1rem;">
+    <li><a href="https://pulsoid.net/" class="text-hover">Pulsoid</a> or <a href="https://www.hyperate.io" class="text-hover">HypeRate</a> app</li>
+    <li>Compatible heart rate monitor (see app sites for list of compatible devices)</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/earthtothien')" type="button">
+    <p><strong>Heart Rate Alert</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>In the Streamer.Bot client, click on the import option in the top menu. Drag the downloaded Download Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
+
+<p>FIGURE 1 HERE</p>
+
+<p>After importing the extension, the following actions should appear in the Streamer.Bot client:</p>
+<ul>
+    <li><strong>Actions Tab</strong></li>
+    <ul>
+        <li>Heart Rate Monitor</li>
+        <li>Scare Alerts</li>
+    </ul>
+    <li>Queues Tab</li>
+    <ul>
+        <li>Heart Rate Monitor</li>
+        <li>Scare Alerts</li>
+    </ul>
+</ul>
+
+<p>The extension may be used with either <a href="https://pulsoid.net/" class="text-hover">Pulsoid</a> or <a href="https://www.hyperate.io" class="text-hover">HypeRate</a>. Both are heart rate monitoring applications and have their own unique setups for integration with Streamer.Bot. Instructions for their installation are documented in the Streamer.Bot wiki and can be found within the following links: <a href="https://docs.streamer.bot/guide/integrations/pulsoid" class="text-hover">Pulsoid Integration</a> or <a href="https://docs.streamer.bot/guide/integrations/hyperate" class="text-hover">HypeRate Integration</a>.</p>
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<h3 id="File_Path_Setup"> File Path Setup</h3>
+<p>When using the Heart Rate alert extension, it is recommended to create a dedicated directory for all sound files as demonstrated in Figure 2. Each sub-folder in the Heart Alerts folder serve as the varying levels of alerts with 1 being the lowest and 4 being the highest. The alerts will be selected based on teh current heart rate range. It is recommended by the <a href="https://docs.streamer.bot/api/sub-actions/core/sounds/play-sound-from-folder" class="text-hover">Streamer.Bot wiki</a> that the sound files be in MP3 or WAV format.</p>
+
+<p>FIGURE 2 HERE</p>
+
+<p>For the <span class="text-yellow">Scare Alerts</span> action, the file path for the main folder is entered into the field for the <strong>Set Argument</strong> sub-action for the <code class="code-red">filePath</code> argument (Figure 3). This argument is used in the <strong>Execute Code(Scare Alert Selector)</strong> sub-action as a reference in order to play suonds form the dedicated sub-folders.</p>
+
+<p>FIGURE 3 HERE</p>
+</section>
+
+<section>
+<h3 id="Trigger_Setup">Trigger Setup</h3>
+<p>Depending on the selected app, the <span class="text-blue">Pulsoid Heart Rate Pulse</span> or the <span class="text-blue">HypeRate Heart Rate Pulse</span> triggers are set for the <span class="text-yellow">Heart Rate Monitor</span> action.</p>
+
+<p>FIGURE 4 HERE</p>
+
+<p>In the <span class="text-yellow">Heart Rate Monitor</span> action, the <strong>Set Argument</strong> sub-action for <code class="code-red">maxHeartRate</code> can be adjusted based on personal preference. This is used by the <strong>Execute Code (Scare Alert Selector)</strong> sub-action in the <span class="text-yellow">Scare Alert</span> action to set the varying conditions for each alert level. For the <span class="text-yellow">Scare Alerts</span> action, any trigger can be used (Channel Points, Twitch events, chat commands, etc.). Once activated, the action will read the current heart rate recorded by the <span class="text-yellow">Heart Rate Monitor</span> action and select the sound file from the appropriate folder.</p>
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.bsky.social"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+            <li><a href="https://x.com/earthtothien"><i class="fa-brands fa-x-twitter"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitter</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+</html>
