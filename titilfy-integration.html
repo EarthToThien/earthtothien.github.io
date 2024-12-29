@@ -291,16 +291,27 @@ else
 <h3>Version 2.0</h3>
 <ul style="padding-left: 1rem;">
     <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span>.</li>
+   
     <li><span class="text-yellow">Recent Donation</span> action renamed to <span class="text-yellow">List Donations</span>.</li>
+   
     <li><span class="text-yellow">Recent Donation Alert</span> action renamed to <span class="text-yellow">Generic Alert</span>.</li>
+   
     <li><span class="text-blue">Recent Donation</span> timer renamed to <span class="text-blue">List Donations</span>.</li>
+   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to perform <code class="code-red">donationId</code> check. The past five <code class="code-red">donationId</code> will now be saved under the glbal argument <code class="code-red">donationIdList_Tiltify</code>. All sub-actions related to <code class="code-red">donationId</code> have been removed.</li>
+   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to include <code class="code-red">donorRewards</code> output argument. This new argument will list the IDs of all the rewards claimed with each donation.</li>
+   
     <li><span class="text-yellow">List Donations</span> action updated. Sub-actions have been updated to account for the two configurations: Sub-Action Method and C# Method (see <a href="#List_Donations_Methods" class="text-hover">List Donation Methods</a> section for more details)</li>
-    <li><span text="'text-yellow">List Donations</span> updated. The <strong>Get Global (<code class="code-red">accessToken</code>)</strong>, <strong>If/Else</strong>, and <strong>Get Global (<code class="code-red">publicId</code>)</strong> sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
-    <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <span class="text-yellow">Generic Alert</span> action.</li>
+   
+    <li><span class="text-yellow">List Donations</span> updated. The <strong>Get Global</strong> (<code class="code-red">accessToken</code>), <strong>If/Else</strong>, and <strong>Get Global</strong> (<code class="code-red">publicId</code>) sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
+   
+    <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <strong>Generic Alert</strong> action.</li>
+   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include <code class="code-red">donorRewards</code> argument.</li>
-    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <span class="text-yellow">Get Access Token</span> action if current <code class="code-red">accessToken_Tiltify</code>expires.</li>
+   
+    <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <strong>Get Access Token</strong> action if current <code class="code-red">accessToken_Tiltify</code>expires.</li>
+   
     <li><span class="text-yellow">Total Raised</span> action updated. <strong>Execute Code (Tiltify Total Raised)</strong> updated to include <code class="code-red">currentGoal</code> output argument. This argument provides the current charity campaign goal set in Tiltify.</li>
 </ul>
 </section>
