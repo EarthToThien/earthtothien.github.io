@@ -62,7 +62,10 @@
 <h2 id="Installation">Installation</h2>
 <p>In the Streamer.Bot client, click on the import option in the top menu. Drag the downloaded Download Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
 
-<p>FIGURE 1 HERE</p>
+<figure>
+    <img src="images/Heart Rate Alerts/Import.webp" alt="Streamer.Bot import window after importing Heart Rate Alert code." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Streamer.Bot import window after importing Heart Rate Alert code.</figcaption>
+</figure>
 
 <p>After importing the extension, the following actions should appear in the Streamer.Bot client:</p>
 <ul>
@@ -86,18 +89,27 @@
 <h3 id="File_Path_Setup"> File Path Setup</h3>
 <p>When using the Heart Rate alert extension, it is recommended to create a dedicated directory for all sound files as demonstrated in Figure 2. Each sub-folder in the Heart Alerts folder serve as the varying levels of alerts with 1 being the lowest and 4 being the highest. The alerts will be selected based on teh current heart rate range. It is recommended by the <a href="https://docs.streamer.bot/api/sub-actions/core/sounds/play-sound-from-folder" class="text-hover">Streamer.Bot wiki</a> that the sound files be in MP3 or WAV format.</p>
 
-<p>FIGURE 2 HERE</p>
+<figure>
+    <img src="images/Heart Rate Alerts/Folder Setup.webp" alt="Example of directory folder setup the Heart Rate Alert extension" style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Example of the directory folder setup for the Heart Rate Alert extension.</figcaption>
+</figure>
 
 <p>For the <span class="text-yellow">Scare Alerts</span> action, the file path for the main folder is entered into the field for the <strong>Set Argument</strong> sub-action for the <code class="code-red">filePath</code> argument (Figure 3). This argument is used in the <strong>Execute Code(Scare Alert Selector)</strong> sub-action as a reference in order to play suonds form the dedicated sub-folders.</p>
 
-<p>FIGURE 3 HERE</p>
+<figure>
+    <img src="images/Heart Rate Alerts/Filepath Setup.webp" alt="Streamer.Bot filepath setup for the Heart Rate Alert extension.">
+    <figcaption><strong>Figure 3</strong>: For the <span class="text-yellow">Scare Alerts</span> action, the path for the main folder is entered in the field for the <strong>Set Argument</strong> sub-action for the <code>filePath</code> argument.</figcaption>
+</figure>
 </section>
 
 <section>
 <h3 id="Trigger_Setup">Trigger Setup</h3>
 <p>Depending on the selected app, the <span class="text-blue">Pulsoid Heart Rate Pulse</span> or the <span class="text-blue">HypeRate Heart Rate Pulse</span> triggers are set for the <span class="text-yellow">Heart Rate Monitor</span> action.</p>
 
-<p>FIGURE 4 HERE</p>
+<figure>
+    <img src="/images/Heart Rate Alerts/Triggers.webp" alt="Trigger setup for the Heart Rate Monitor action.">
+    <figcaption><strong>Figure 4</strong>: Pulsoid (left) or HypeRate (right) can be used to trigger the <span class="text-yellow">Heart Rate Monitor</span> action.</figcaption>
+</figure>
 
 <p>In the <span class="text-yellow">Heart Rate Monitor</span> action, the <strong>Set Argument</strong> sub-action for <code class="code-red">maxHeartRate</code> can be adjusted based on personal preference. This is used by the <strong>Execute Code (Scare Alert Selector)</strong> sub-action in the <span class="text-yellow">Scare Alert</span> action to set the varying conditions for each alert level. For the <span class="text-yellow">Scare Alerts</span> action, any trigger can be used (Channel Points, Twitch events, chat commands, etc.). Once activated, the action will read the current heart rate recorded by the <span class="text-yellow">Heart Rate Monitor</span> action and select the sound file from the appropriate folder.</p>
 </section>
