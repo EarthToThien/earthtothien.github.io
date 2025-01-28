@@ -250,7 +250,7 @@ else
 </pre>
 <figcaption><strong>Figure 9</strong>: Example C# code of conditions and If statements to trigger different alert actions. The “m” included with the numbers in the conditions is required when comparing decimals, the numerical format of the <code class="code-red">donorAmount</code> variable.</figcaption>
 
-<p>Once the conditions are satisfied, the native C# method <span class="text-purple">CPH.RunAction</span> is used to trigger the alert action. For more information on native C# methods in Streamer.Bot, refer to the wiki. Similar to the Sub-Action Method, it is recommended that the conditions be set in descending order if <code class="code-red">donorAmount</code> is used.</p>
+<p>Once the conditions are satisfied, the native C# method <span class="text-purple">CPH.RunAction()</span> is used to trigger the alert action. For more information on native C# methods in Streamer.Bot, refer to the wiki. Similar to the Sub-Action Method, it is recommended that the conditions be set in descending order if <code class="code-red">donorAmount</code> is used.</p>
 </section>
 
 <section>
@@ -291,6 +291,10 @@ else
 
 <section>
 <h2 id="Changelog">Changelog</h2>
+<h3>Version 2.1</h3>
+<ul style="padding-left: 1rem;">
+    <li><span class="text-yellow">List Donations</span> action updated. <code class="code-red">donorAmount</code> argument updated to function constistently across all cultures. Added <span class="text-purple">CultureInfo.InvariantCulture</span> call to the <span class="text-purple">Convert.ToDecimal()</span> for <code class="code-red">donorAmount</code>.</li>
+</ul>
 <h3>Version 2.0</h3>
 <ul style="padding-left: 1rem;">
     <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span>.</li>
