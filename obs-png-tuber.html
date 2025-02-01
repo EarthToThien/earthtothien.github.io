@@ -42,7 +42,7 @@
 
 <section>
 <h2 id="Introduction">Introduction</h2>
-<p>This is a detailed tutorial on how to make a PNG avatar in OBS. This tutorial will show how to link the avatar to the streamer's microphone, but other audio sources may be used.</p>
+<p>This is a detailed tutorial on how to make a PNG avatar using only OBS and the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin by Exceldro. This tutorial will show how to setup the source assets for the avatar in OBS and link it to the streamer's microphone. Alternatively, other audio sources may be used, and the steps required are the same.</p>
 </section>
 
 <section>
@@ -71,18 +71,18 @@
     <figcaption><strong>Figure 1</strong>: OBS image source setup for the PNG avatar. The Talking Image source is layered over the Idle Image source.</figcaption> 
 </figure>
 
-<p>In the Audio Mixer for OBS, open the Filters window for the microphone or some other dedicated audio source. Right click in the Audio Filters box, and if the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin is installed correctly, a filter called Audio Move should be available (Figure 2).</p>
+<p>In the Audio Mixer for OBS, open the Filters window for the microphone or alternate dedicated audio source. Right click in the Audio Filters box, and if the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin is installed correctly, a filter called Audio Move should be available (Figure 2).</p>
 
 <figure>
     <img src="images/OBS PNG Tuber/Figure 2-Audio Move Filter.webp" alt="Audio Move filter location for the Microphone source in OBS." style="max-width: 90%; height: auto;">
     <figcaption><strong>Figure 2</strong>: Audio Move filter location for the Microphone source in OBS.</figcaption> 
 </figure>
 
-<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." For Set the avatar scene to the avatar scene, and set the source to the Talking Image source. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the settings for the other options. Easing and Threshold can be adjusted to preference and microphone setup. Repeat these steps for the Idle Image, but for Threshold Action, set to "Enable Under and Disable Over."</p>
+<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." Set the avatar scene for the designated Scene setting, and set the Talking Image source for the designated Source setting. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the recommended settings for the additional options. Easing and Threshold can be adjusted to preference and microphone setup. Repeat these steps for the Idle Image source, but for Threshold Action, set to "Enable Under and Disable Over."</p>
 
 <figure>
     <img src="images/OBS PNG Tuber/Figure 3-Filter Settings.webp" alt="Audio Move filter setup for Talking and Idle filters. Threshold Action for Talking filter set to Enable Over and Disable Under, and Threshold Action for Idle filter set to Enable Under and Disable Over." style="max-width: 90%; height: auto;">
-    <figcaption><strong>Figure 3</strong>: Audio Move filter setup for Talking and Idle filters. The difference between the two filters is the Threshold Action: Enable Over and Disabled Under for Talking and Enable Under and Disable Over for Idle. Easing and Threshold settings can be adjusted to preference and microphone setup.</figcaption> 
+    <figcaption><strong>Figure 3</strong>: Audio Move filter setup for Talking and Idle filters. The difference between the two filters is the "Threshold Action: Enable Over and Disabled Under" for Talking and "Enable Under and Disable Over" for Idle.</figcaption> 
 </figure>
 
 </section>
