@@ -9,6 +9,11 @@ header{
     color: #FFFFFF;
 }
 
+iframe{
+    display: block;
+    border-style: none;
+}
+
 body{
     font-family: sans-serif;    
     color: #FFFFFF;
