@@ -34,7 +34,7 @@
 </ul>
 </div>
 
-<iframe src="https://player.twitch.tv/?video=2304695910&parent=earthtothien.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+<iframe src="https://player.twitch.tv/?video=2304695910&parent=earthtothien.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="display: block;"></iframe>
 
 <section>
 <h2 id="Introduction">Introduction</h2>
@@ -60,19 +60,26 @@
 
 <section>
 <h2 id="Installation">Installation</h2>
-<p>Create a new scene in OBS for the PNG avatar. The scene for the PNG avatar will be added to whatever scene the avatar will appear using nested scenes. In the newly created avatar scene, create an image source the Idle Image and another for the Talking Image. Layer the talking image over the idle image (Figure 1). The idea is to have OBS swap the visibility of the two sources while the streamer is speaking.</p>
+<p>Create a new scene in OBS for the PNG avatar. The scene for the PNG avatar will be added to other scenes where the avatar will appear using nested scenes. In the newly created avatar scene, create an image source the Idle Image and another for the Talking Image. Layer the talking image over the idle image (Figure 1). The idea is to have OBS swap the visibility of the two sources while the streamer is speaking.</p>
 
 <figure>
-
+    <img src="images/OBS PNG Tuber/Figure 1-Layered.webp" alt="OBS image source setup for PNG avatar. Talking Image source is layered over the Idle Image source." style="max-width: 90%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: OBS image source setup for the PNG avatar. The Talking Image source is layered over the Idle Image source.</figcaption> 
 </figure>
 
 <p>In the Audio Mixer for OBS, open the Filters window for the microphone or some other dedicated audio source. Right click in the Audio Filters box, and if the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin is installed correctly, a filter called Audio Move should be available (Figure 2).</p>
 
-<p>FIGURE 2 HERE</p>
+<figure>
+    <img src="images/OBS PNG Tuber/Figure 2-Audio Move Filter.webp" alt="Audio Move filter location for the Microphone source in OBS." style="max-width: 90%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Audio Move filter location for the Microphone source in OBS.</figcaption> 
+</figure>
 
-<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." For Set the avatar scene to the avatar scene, and set the source to the Talking Image source. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the settings for the other options. Easing and Threshold can be adjusted to preference. Repeat these steps for the Idle Image, but for Threshold Action, set to "Enable Under and Disable Over."</p>
+<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." For Set the avatar scene to the avatar scene, and set the source to the Talking Image source. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the settings for the other options. Easing and Threshold can be adjusted to preference and microphone setup. Repeat these steps for the Idle Image, but for Threshold Action, set to "Enable Under and Disable Over."</p>
 
-<p>FIGURE 3 HERE</p>
+<figure>
+    <img src="images/OBS PNG Tuber/Figure 3-Filter Settings.webp" alt="Audio Move filter setup for Talking and Idle filters. Threshold Action for Talking filter set to Enable Over and Disable Under, and Threshold Action for Idle filter set to Enable Under and Disable Over." style="max-width: 90%; height: auto;">
+    <figcaption><strong>Figure 3</strong>: Audio Move filter setup for Talking and Idle filters. The difference between the two filters is the Threshold Action: Enable Over and Disabled Under for Talking and Enable Under and Disable Over for Idle. Easing and Threshold settings can be adjusted to preference and microphone setup.</figcaption> 
+</figure>
 
 </section>
 
