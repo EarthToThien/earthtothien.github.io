@@ -64,21 +64,21 @@
 
 <section>
 <h2 id="Installation">Installation</h2>
-<p>Create a new scene in OBS for the PNG avatar. The scene for the PNG avatar will be added to other scenes where the avatar will appear using nested scenes. In the newly created avatar scene, create an image source the Idle Image and another for the Talking Image. Layer the talking image over the idle image (Figure 1). The idea is to have OBS swap the visibility of the two sources while the streamer is speaking.</p>
+<p>Create a new scene in OBS for the PNG avatar. This scene will be added to other scenes where the avatar will appear via nested scenes. In the newly created avatar scene, create an image source for the Idle Image and another for the Talking Image. Layer the talking image over the idle image (Figure 1). The idea here will be to have OBS swap the visibility of the two sources while the streamer is speaking. It is recommended that these images have subtle movements (ie mouth opening and closing) for the best effect, but for this tutorial, the images selected have large movements to demonstrate the swapping of source visibilities.</p>
 
 <figure>
     <img src="images/OBS PNG Tuber/Figure 1-Layered.webp" alt="OBS image source setup for PNG avatar. Talking Image source is layered over the Idle Image source." style="max-width: 90%; height: auto;">
     <figcaption><strong>Figure 1</strong>: OBS image source setup for the PNG avatar. The Talking Image source is layered over the Idle Image source.</figcaption> 
 </figure>
 
-<p>In the Audio Mixer for OBS, open the Filters window for the microphone or alternate dedicated audio source. Right click in the Audio Filters box, and if the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin is installed correctly, a filter called Audio Move should be available (Figure 2).</p>
+<p>In the Audio Mixer for OBS, open the Filters window for the microphone source or alternate dedicated audio source. Right click in the Audio Filters box, and if the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin is installed correctly, a filter called Audio Move should be available (Figure 2).</p>
 
 <figure>
     <img src="images/OBS PNG Tuber/Figure 2-Audio Move Filter.webp" alt="Audio Move filter location for the Microphone source in OBS." style="max-width: 90%; height: auto;">
     <figcaption><strong>Figure 2</strong>: Audio Move filter location for the Microphone source in OBS.</figcaption> 
 </figure>
 
-<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." Set the avatar scene for the designated Scene setting, and set the Talking Image source for the designated Source setting. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the recommended settings for the additional options. Easing and Threshold can be adjusted to preference and microphone setup. Repeat these steps for the Idle Image source, but for Threshold Action, set to "Enable Under and Disable Over."</p>
+<p>Add an Audio Move filter and name it "Talking". Set Action for the filter to "Source Visibility." Set the avatar scene as the designated Scene, and set the Talking Image source for the designated Source. For Threshold Action, set to "Enable Over and Disable Under." As a reference, Figure 3 shows the recommended settings for the additional options. Easing and Threshold can be adjusted to preference and microphone setup. Repeat these steps for the Idle Image source, but for Threshold Action, set to "Enable Under and Disable Over." As the streamer speaks, the Talking Image will be visible while the Idle Image will be hidden and vice versa when the streamer is silent. As previously stated, it is recommended that there are subtle movements between the two sources such as the mouth opening and closing to have the best effect with the PNG avatar.</p>
 
 <figure>
     <img src="images/OBS PNG Tuber/Figure 3-Filter Settings.webp" alt="Audio Move filter setup for Talking and Idle filters. Threshold Action for Talking filter set to Enable Over and Disable Under, and Threshold Action for Idle filter set to Enable Under and Disable Over." style="max-width: 90%; height: auto;">
