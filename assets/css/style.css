@@ -76,21 +76,30 @@ li{
 .text-hover:hover{
     text-decoration: underline;
 }
+
+.text-yellow{
+    font-weight: bold;    
+    color:#eebd64;
+}
 .text-red{
     font-weight: bold;
     color:#ec3c49;
 }
-.text-yellow{
-    font-weight: bold;    
-    color:#eebd64;
+.text-purple{
+    font-weight: bold;
+    color: #978dee;
 }
 .text-blue{
     font-weight: bold;    
     color:#8cb4ec;
 }
-.text-purple{
-    font-weight: bold;
-    color: #978dee;
+.text-green{
+    font-weight: bold;    
+    color:#90d8b2;
+}
+.text-orange{
+    font-weight: bold;    
+    color:#faaf90;
 }
 
 p{

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Opinion Gauge</title>
+    <meta name="Description" content="">
+    <meta name="keywords" content="Streamer.Bot, extension">
+    <meta name="author" content="EarthToThien">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image:url" content="/assets/header/BackgroundBanner.webp">    
+    <meta property="og:url" content="https://earthtothien.github.io/">
+    <meta property="og:title" content="Thien's Streamer Corner">
+    <meta property="og:description" content="A place for me to share all my widgets for Streamer.Bot and OBS!">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <script src="/assets/js/scroll-top.js" async></script>    
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header id="Header">
+    <link rel="preload" as="image" href="/assets/header/BackgroundBanner.webp">
+    <h1 style="font-size: 4.25rem;">Opinion Gauge</h1>
+</header>
+
+<div class="body-content">
+
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Opinion Gauge</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Installation_OBS" class="text-hover">OBS Installation</a></li>
+        <li><a href="#Installation_Streamer_Bot" class="text-hover">Streamer.Bot Installation</a></li>
+    </ul>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+</ul>
+</div>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview of the Opinion Gauge widget for Streamer.Bot and OBS. This widget allows the streamer's audience to interact by entering "yes" or "no" in the chat. The widget will react to the chat responses live on screen.</p>
+
+<figure>
+    <img src="images/Opinion Gauge/Figure1-Opinion Gauge Widget.webp" alt="Opinion Gauge Widget with the text Yes or No above a gauge that reacts to chat's responses. Green for all the yes responses and red for all the responses." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Opinion Gauge Widget for OBS and Streamer.Bot</figcaption>
+</figure>
+
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 1rem;">
+    <li><strong><a href="https://obsproject.com/" class="text-hover">OBS (Version 31.0.0 or later)</a></strong></li>
+    <li><strong>OBS Plugins</strong></li>
+    <ul class="ul-indent">
+        <li><a href="https://obsproject.com/forum/resources/source-copy.1261/" class="text-hover">Source Copy</a></li>
+        <li><a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a></li>
+        <li><a href="https://obsproject.com/forum/resources/obs-shaderfilter.1736/" class="text-hover">OBS Shaderfilter</a></li>
+    </ul>
+</ul>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/s/d312b3859c')" type="button" class="download-button">
+    <p><strong>Opinion Gauge</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>Extract the 7-Zip file. There should be two files available in the folder: <span class="text-green">Widget-Opinion Gauge-OBS</span> and <span class="text-green">Widget-Opinion Gauge-SB</span>. The OBS file is the import scenes for your OBS setup, and the SB file is the import actions for your Streamer.Bot client.</p>
+
+<h3 id="Installation_OBS">OBS Installation</h3>
+<p>For your OBS installation, make sure all required plugins listed in the <a href="#Requirements" class="text-hover">Requirements</a> section are installed. In OBS, click on the Tools option, Source Copy, and then Load Scene (Figure 2). Locate the <span class="text-green">Widget-Opinion Gauge-OBS</span> file and open it. There should be two imported scenes in the Scene list of your OBS setup (Figure 3). For this widget to appear in other scenes, it is recommended to add the <span class="text-orange">Widget - Opinion Gauge</span> scene to the destined scene via nested scenes or have it appear in all scenes using the <a href="https://obsproject.com/forum/resources/downstream-keyer.1254/" class="text-hover">Downstream Keyer</a> plugin.</p>
+
+<figure>
+    <img src="images/Opinion Gauge/Figure2-OBS Scene Import.webp" alt="OBS options from Source Copy plugin. Tools > Source Copy > Load Scene. This is to import the OBS import file to generate the scenes required for the widget." style="max-width: 68%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Using the Source Copy plugin, </figcaption>
+</figure>
+
+<figure>
+    <img src="images/Opinion Gauge/Figure3-OBS Scene List.webp" alt="Two scenes, Widget - Opinion Gauge and Widget - Opinion Gauge - Bar, added to the scene collection after importing the scene file into OBS." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 3</strong>: The scenes added to the scene collection after importing the scene file into OBS.</figcaption>
+</figure>
+
+<h3 id="Installation_Streamer_Bot">Streamer.Bot Installation</h3>
+<p>In the Streamer.Bot client, click on the Import option in the top menu. Drag the SB file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 4).</p>
+
+<figure>
+    <img src="images/Opinion Gauge/Figure4-SB import Window.webp" alt="Streamer.Bot import window after importing Opinion Gauge Streamer.Bot file." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 4</strong>: Streamer.Bot import window</figcaption>
+</figure>
+
+<p>After importing the widget, the following actions should appear in the Streamer.Bot client:</p>
+
+<ul>
+    <li>Opinion Gauge</li>
+    <li>Opinion Gauge - End</li>
+    <li>Opinion Gauge - Reset</li>
+    <li>Opinion Gauge - Start</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<p>In Streamer.Bot, triggers need to be added to the <span class="text-yellow">Opinion Gauge - Start</span>, <span class="text-yellow">Opinion Gauge - Reset</span>, and <span class="text-yellow">Opinion Gauge - End</span> actions. These commands can be in the form of chat commands or channel point rewards. Alternatively, these Streamer.Bot actions can also be triggered from an Elgato Streamdeck or similar device that supports Streamer.Bot.</p>
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.github.io"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+</html>
