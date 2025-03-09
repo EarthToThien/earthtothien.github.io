@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Daily Check-In</title>
+    <meta name="Description" content="">
+    <meta name="keywords" content="Streamer.Bot, extension, check-in, channel point, chat interaction, Twitch">
+    <meta name="author" content="EarthToThien">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image:url" content="/assets/header/BackgroundBanner.webp">    
+    <meta property="og:url" content="https://earthtothien.github.io/">
+    <meta property="og:title" content="Thien's Streamer Corner">
+    <meta property="og:description" content="A place for me to share all my widgets for Streamer.Bot and OBS!">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/js/prism.js"/>
+    <script src="/assets/js/scroll-top.js" async></script>    
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header id="Header">
+    <link rel="preload" as="image" href="/assets/header/BackgroundBanner.webp">
+    <h1 style="font-size: 4.25rem;">Daily 
+        Check-In</h1>
+</header>
+
+<div class="body-content">
+
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Daily Check-In</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+</ul>
+</div>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview for the Daily Check-In extension for Streamer.Bot. This extension keeps track the number of streams the viewer has checked in by using the assigned trigger. Any trigger may be assigned to the extension, but for this overview, the Twitch channel reward will be used as the selected trigger.</p>
+
+<figure>
+    <img src="images/Daily Check-In/Figure 1 Chat Window.webp" alt="Daily check-in extension for Streamer.Bot. Image is of a chat window with users claiming a channel point reward and the bot responds with their redeem with a programmed message." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Daily Check-In extension Streamer.Bot</figcaption>
+</figure>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('URL')" type="button" class="download-button">
+    <p><strong>Daily Check-In</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>In the Streamer.Bot client, select the Import option in the top menu. Drag the downloaded Download Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 2).</p>
+
+<figure>
+    <img src="images/Daily Check-In/Figure 2 StreamerBot Import.webp" alt="Image of the Streamer.Bot import window for Daily Check-In extension." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Streamer.Bot import window for the Daily Check-In code.</figcaption>
+</figure>
+
+<p>After importing the extension, the following action should appear in the Streamer.Bot client:</p>
+<ul>
+    <li><strong>Actions Tab</strong></li>    
+    <ul>
+        <li>Daily Check-In</li>
+    </ul>
+    <li><strong>Queues Tab</strong></li>
+    <ul>
+        <li>Daily Check-In</li>
+    </ul>
+</ul>
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<p>The <span class="text-yellow">Daily Check-In</span> action can be triggered using a variety of triggers. For this overview, we will be creating a Twitch channel reward as the trigger for the action (Figure 3).</p>
+
+<figure>
+    <img src="images/Daily Check-In/Figure 3 Channel Reward.webp" alt="Image of the Add Channel Reward window in Streamer.Bot to add a Twitch channel reward for the Daily Check-In extension. " style="max-width: 85%; height: auto;">
+    <figcaption><strong>Figure 3</strong>: Example of Channel Reward for configuration for the Daily Check-In extension.</figcaption>
+</figure>
+
+<p>In order to create a Twitch channel reward, open Trigger menu by right clicking in the Triggers box for the <span class="text-yellow">Daily Check-In</span> action, and navigate to Twitch &gt; Channel Rewards &gt; Reward Redemption. From the window popup, select "Create Reward" unless one has already been created prior. This can be selected in the pulldown menu. To create the reward, fill in the fields as demonstrated in the example in Figure 3. These options can be customized to user preference, but it is important to set 1 for Max per User per Stream in order to achieve the daily option.</p> 
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.github.io"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+</html>
