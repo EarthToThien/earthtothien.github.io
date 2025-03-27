@@ -103,11 +103,13 @@
         <li>Tiltify - List Donations</li>
     </ul>
 </ul>
-<p><span class="text-yellow">Access Token</span> and <span class="text-yellow">List Donations</span> are the main actions for the extension. <span class="text-yellow">Generic Alert</span> is an example alert action that can be used as a simple alert or an alert action template. <span class="text-yellow">Total Raised</span> is an optional action if the user wants to display the current amount raised and the current goal for the Tiltify campaign. Under the Timed Actions Tab (Settings > Timed Actions), the <span class="text-blue">Tiltify - List Donations</span> timer is disabled. Once configuration is complete and all alert actions are linked to the extension, the timer needs to be enabled to begin polling Tiltify.</p>
+<p><span class="text-yellow">Access Token</span> and <span class="text-yellow">List Donations</span> are the main actions for the extension. <span class="text-yellow">Generic Alert</span> is an example alert action that can be used as a simple alert or an alert action template. <span class="text-yellow">Total Raised</span> is an optional action if the user wants to display the current amount raised and the current goal for the Tiltify campaign. Under the Timed Actions Tab (Settings &gt; Timed Actions), the <span class="text-blue">Tiltify - List Donations</span> timer is disabled. Once configuration is complete and all alert actions are linked to the extension, the timer needs to be enabled to begin polling Tiltify.</p>
 </section>
 
 <section>
 <h2 id="Configuration">Configuration</h2>
+</section>
+<section>
 <h3 id="Get_Access_Token">Get Access Token</h3>
 <p>In order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span> for the <span class="text-yellow">Get Access Token</span> action, a Tiltify account is required. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application, but it is not required for the extension function. For this, <code class="code-red">http://localhost</code> is used as shown in Figure 2.</p>
 
@@ -135,7 +137,7 @@
 <h3 id="List_Donations">List Donations</h3>
 <p>The <span class="text-yellow">List Donations</span> action serves as the trigger for all donation-based alerts. There is a repeating timer called <span class="text-blue">Tiltify - List Donations</span> that serves as the trigger for the <span class="text-yellow">List Donations</span> action. With each trigger, the <span class="text-yellow">List Donations</span> action polls Tiltify for the latest donation data from the current connected Tiltify campaign. This timer can be adjusted in the Streamer.Bot client under Settings > Timed Actions and is defaulted at 2 second intervals.</p>
 
-<strong>Note</strong>: After configuring the <span class="text-yellow">List Donations</span> action, it is recommend to set the action to "Exclude from History", which can be done by right clicking on the action and checking the option. This will reduce load on the Streamer.Bot client but makes troubleshooting difficult unless "Exclude from History" is disabled.
+<p><strong>Note</strong>: After completing configuration of the extension, it is recommended to set the <span class="text-yellow">List Donations</span> action to "Exclude from History", which can be done by right clicking on the action and checking the option. This will reduce load on the Streamer.Bot client. When troubleshooting, disable "Exclude from History".</p>
 
 <p>Under the <span class="text-yellow">List Donations</span> action, the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action polls data from Tiltify and generates arguments using data from the most recent donation in the Tiltify charity campaign (see table below). These arguments are used in later sub-actions and can be used in alert actions. With each polling, <code class="code-red">donationIdList_Tiltify</code>, which lists the <code class="code-red">donationId</code> of the last five donations, is checked to see if it contains the <code class="code-red">donationId</code> of the most recent Tiltify donation data. If the list does not contain it, <code class="code-red">donationIdList_Tiltify</code> is updated to add the new donationId and remove the oldest donationId from the list. The other arguments are then generated, and the set alert actions are triggered.</p>
 
@@ -304,32 +306,22 @@ else
 <h3>Version 2.1</h3>
 <ul style="padding-left: 1rem;">
     <li><span class="text-yellow">List Donations</span> action updated. <code class="code-red">donorAmount</code> argument updated to function constistently across all cultures. Added <span class="text-purple">CultureInfo.InvariantCulture</span> call to the <span class="text-purple">Convert.ToDecimal()</span> for <code class="code-red">donorAmount</code>.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Action now checks the last 5 donations with each data pull for a new donation. If there are multiple new donations, the extension will queue the alert actions as the new donations appear in the data. Thanks to frogsye and pwnny for introducing this fix!</li>
     <li><span class="text-yellow">Total Raised</span> action updated. <code class="code-red">currentTotal</code> and <code class="code-red">currentGoal</code> arguments updated to function constistently across all cultures. Added <span class="text-purple">CultureInfo.InvariantCulture</span> call to the <span class="text-purple">Convert.ToDecimal()</span> for <code class="code-red">currentTotal</code> and <code class="code-red">currentGoal</code>.</li>
 </ul>
 <h3>Version 2.0</h3>
 <ul style="padding-left: 1rem;">
     <li><span class="text-yellow">Access Token</span> action renamed to <span class="text-yellow">Get Access Token</span>.</li>
-   
     <li><span class="text-yellow">Recent Donation</span> action renamed to <span class="text-yellow">List Donations</span>.</li>
-   
     <li><span class="text-yellow">Recent Donation Alert</span> action renamed to <span class="text-yellow">Generic Alert</span>.</li>
-   
     <li><span class="text-blue">Recent Donation</span> timer renamed to <span class="text-blue">List Donations</span>.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to perform <code class="code-red">donationId</code> check. The past five <code class="code-red">donationId</code> will now be saved under the global argument <code class="code-red">donationIdList_Tiltify</code>. All sub-actions related to <code class="code-red">donationId</code> have been removed.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> sub-action updated to include <code class="code-red">donorRewards</code> output argument. This new argument will list the IDs of all the rewards claimed with each donation.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. Sub-actions have been updated to account for the two configurations: Sub-Action Method and C# Method (see <a href="#List_Donations_Methods" class="text-hover">List Donation Methods</a> section for more details).</li>
-   
     <li><span class="text-yellow">List Donations</span> updated. The <strong>Get Global</strong> (<code class="code-red">accessToken</code>), <strong>If/Else</strong>, and <strong>Get Global</strong> (<code class="code-red">publicId</code>) sub-actions have been consolidated into the <strong>Execute Code (Tiltify Donor Data)</strong> sub-action.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. New <strong>Run Action</strong> sub-action added to trigger the <strong>Generic Alert</strong> action.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include <code class="code-red">donorRewards</code> argument.</li>
-   
     <li><span class="text-yellow">List Donations</span> action updated. <strong>Execute Code (Tiltify Donor Data)</strong> updated to include condition to trigger <strong>Get Access Token</strong> action if current <code class="code-red">accessToken_Tiltify</code> expires.</li>
-   
     <li><span class="text-yellow">Total Raised</span> action updated. <strong>Execute Code (Tiltify Total Raised)</strong> updated to include <code class="code-red">currentGoal</code> output argument. This argument provides the current charity campaign goal set in Tiltify.</li>
 </ul>
 </section>
