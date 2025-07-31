@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Tasklist</title>
+    <meta name="Description" content="">
+    <meta name="keywords" content="Streamer.Bot, extension">
+    <meta name="author" content="EarthToThien">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image:url" content="/assets/header/BackgroundBanner.webp">    
+    <meta property="og:url" content="https://earthtothien.github.io/">
+    <meta property="og:title" content="Thien's Streamer Corner">
+    <meta property="og:description" content="A place for me to share all my widgets for Streamer.Bot and OBS!">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/js/prism.js"/>
+    <script src="/assets/js/scroll-top.js" async></script>    
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header id="Header">
+    <link rel="preload" as="image" href="/assets/header/BackgroundBanner.webp">
+    <h1 style="font-size: 4.25rem;">Tasklist</h1>
+</header>
+
+<div class="body-content">
+
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Tasklist</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Installation_OBS" class="text-hover">OBS Installation</a></li>
+        <li><a href="#Installation_Streamer_Bot" class="text-hover">Streamer.Bot Installation</a></li>
+    </ul>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li> 
+    <ul class="ul-indent">
+        <li><a href="#Configuration_Color_Scheme" class="text-hover">Color Scheme</a></li>
+    </ul>
+</ul>
+</div>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview of the Tasklist stream widget for Streamer.Bot and OBS. This widget can be used for project-focused or productivity streams. The widget will keep track of the user's and their audience's tasks and maintain an updated list live on screen. The widget has a customizable color scheme (see <a href="#Configuration" class="text-hover">Configuration</a> section) and includes a work and break timer.</p>
+
+<figure>
+    <img src="images/Tasklist/Figure1-Tasklist Widget.webp" alt="Tasklist widget with a timer for working and breaks. The widget contains a list of example tasks." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Tasklist Widget for OBS and Streamer.Bot</figcaption>
+</figure>
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 1rem;">
+    <li><strong><a href="https://obsproject.com/" class="text-hover">OBS (Version 31.0.0 or later)</a></strong></li>
+    <li><strong>OBS Plugins</strong></li>
+    <ul class="ul-indent">
+        <li><a href="https://obsproject.com/forum/resources/source-copy.1261/" class="text-hover"><strong>Source Copy</strong></a> - Allows importing of required OBS scenes</li>
+        <li><a href="https://obsproject.com/forum/resources/markdown-source.1764/" class="text-hover"><strong>Markdown</strong></a> - Source used to display tasklist</li>
+        <li><a href="https://obsproject.com/forum/resources/move.913/" class="text-hover"><strong>Move</strong></a> - Used to create timers</li>
+        <li><a href="https://obsproject.com/forum/resources/obs-shaderfilter.1736/" class="text-hover"><strong>OBS Shaderfilter</strong></a> - Applies rounded corners to widget (optional)</li>
+    </ul>
+</ul>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/s/f5cfd0feba')" type="button" class="download-button">
+    <p><strong>Tasklist</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>Extract the Zip file. There should be two folders labeled assets and imports. The assets folder contains images for the OBS sources and the data file used by the Tasklist widget. The imports folder contains two files: <strong class="text-green">Widget-Tasklist-OBS</strong> and <strong class="text-green">Widget-Tasklist-SB</strong>. The OBS file is the import scenes for your OBS setup, and the SB file is the import actions for your Streamer.Bot client.</p>
+
+<h3 id="Installation_OBS">OBS Installation</h3>
+<p>For your OBS installation, make sure all required plugins listed in the <a href="#Requirements" class="text-hover">Requirements</a> section are installed. In OBS, click on the Tools option, Source Copy, and then Load Scene (Figure 2). Locate the <strong class="text-green">Widget-Tasklist-OBS</strong> and open it. There should be one imported scene in the Scene list of your OBS setup (Figure 3). For this widget to appear in other scenes, it is recommended to add the <strong class="text-orange">Widget - Tasklist</strong> scene to the destined scene via nested scenes or the <a href="https://obsproject.com/forum/resources/downstream-keyer.1254/" class="text-hover">Downstrean Keyer</a> plugin.</p>
+
+<strong class="text-red">IMPORTANT NOTE</strong>: Do not rename the scenes or sources. The Streamer.Bot actions for the Tasklist widget will not function properly if the scenes or sources do not match.
+
+<figure>
+    <img src="images/Tasklist/Figure2-OBS Scene Import.webp" alt="OBS options from Source Copy plugin. Tools > Source Copy > Load Scene. This is to import the OBS import file to generate the scenes required for the widget." style="max-width: 68%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Use the Source Copy plugin to import the scene file for the Tasklist widget in the scene collection.</figcaption>
+</figure>
+
+<figure>
+    <img src="images/Tasklist/Figure3-Scene List.webp" alt="Scene and Sources import in OBS." style="max-width: 60%; height: auto;">
+    <figcaption><strong>Figure 3</strong>: The scenes added to the scene collection after importing the scene file into OBS.</figcaption>
+</figure>
+
+<p>If the widget does not appear as show in Figure 1, the OBS Shaderfilter for the scene may need to be reloaded. Right click on the <strong class="text-orange">Tasklist - Background</strong> source, open the Filters window, and reload the Rounded Corners filter. Repeat the same steps for <strong class="text-orange">Tasklist - Foreground</strong> (Figure 4).</p>
+
+<figure>
+    <img src="images/Tasklist/Figure4-Filter List.webp" alt="Reload the Rounded Corner filters for the Tasklist-Background and Tasklist-Foreground sources." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 4</strong>: Reload the Rounded Corner filters for the <strong class="text-orange">Tasklist - Background</strong> and <strong class="text-orange">Tasklist - Foreground</strong> sources if the widget does not appear as intended.</figcaption>
+</figure>
+
+<h3 id="Installation_Streamer_Bot">Streamer.Bot Installation</h3>
+<p>In the Streamer.Bot client, clock on the import option in the top menu. Drag the SB file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 5).</p>
+
+<figure>
+    <img src="images/Tasklist/Figure5-SB import Window.webp" alt="Streamer.Bot import window after importing Opinion Gauge Streamer.Bot file." style="max-width: 68%; height: auto;">
+    <figcaption><strong>Figure 5</strong>: Streamer.Bot import window</figcaption>
+</figure>
+
+<p>After importing the widget, the following actions should appear in the Streamer.Bot client:</p>
+<ul>
+    <li>Tasklist</li>
+    <li>Tasklist - Check</li>
+    <li>Tasklist - Clear</li>
+    <li>Tasklist - Timer</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<p>The Tasklist widget has a default set of commands to interact with it. Table 1 contains the list of commands available.</p>
+
+<table class="center">
+    <caption><strong>Table 1</strong>: All available commands for the Tasklist widget.</caption>
+    <tr>
+        <th><strong>Command</strong></th>
+        <th><strong>Desctiption</strong></th>
+    </tr>
+    <tr>
+        <td>!task, !addtask, !taskadd, !addtask</td>
+        <td>Add a new task to the tasklist.</td>
+    </tr>
+    <tr>
+        <td>!done, !taskdone, !donetask, !finish, !finished</td>
+        <td>Complete current task. Adding a number following the command like <code class="code-red">!done 3</code> will complete a specific task.</td>
+    </tr>
+    <tr>
+        <td>!tasklist, !mytasks, !mytask, !mylist, !mytasklist</td>
+        <td>Shows current tasklist in the chat.</td>
+    </tr>
+    <tr>
+        <td>!completedtasks, !completedtask, !finishedtask, !finishedtasks</td>
+        <td>Shows completed tasklist in the chat.</td>
+    </tr>
+    <tr>
+        <td>!timeset</td>
+        <td>Set the timers in the following format: <code class="code-red">!timeset work/break</code>.</td>
+    </tr>
+    <tr>
+        <td>!work</td>
+        <td>Start the work timer.</td>
+    </tr>
+    <tr>
+        <td>!break</td>
+        <td>Start the break timer.</td>
+    </tr>
+</table>
+
+<h2 id="Configuration_Color_Sceme">Color Scheme</h2>
+<p>If you would like to change the color scheme for the Tasklist widget, right click on the source labeled <strong class="text-orange">Tasklist - Background</strong> and select Properties. From there, you can change the color properties to your preference. The same can be done for <strong class="text-orange">Tasklist - Foreground</strong> source. For added color customization, the <a href="https://obsproject.com/forum/resources/gradient-source.1172/" class="text-hover">Gradient</a> plugin can be used to replace the color sources.</p>
+
+<figure>
+    <img src="images/Tasklist/Figure6-Source Properties.webp" alt="Access the source properties for Background and Foreground sources to customize the color." style="max-width: 68%; height: auto;">
+    <figcaption><strong>Figure 6</strong>: The properties for the <strong class="text-orange">Tasklist - Background</strong> and <strong class="text-orange">Tasklist - Foreground</strong> sources can be accessed in order to customize the color scheme for the Tasklist widget. Alternatively, the <a href="https://obsproject.com/forum/resources/gradient-source.1172/" class="text-hover">Gradient</a> plugin can be used for more color options.</figcaption>
+</figure>
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.github.io"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+</html>
