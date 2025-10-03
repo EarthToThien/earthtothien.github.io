@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Ad Timer Tutorial</title>
+    <meta name="Description" content="">
+    <meta name="keywords" content="OBS, tutorial, Streamer.Bot, ad, timer">
+    <meta name="author" content="EarthToThien">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image:url" content="/assets/header/SocialBanner.webp">
+    <meta property="og:url" content="https://earthtothien.github.io/ad-timer.html">
+    <meta property="og:title" content="Thien's Streamer Corner">
+    <meta property="og:description" content="A place for me to share all my widgets for Streamer.Bot and OBS!">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/prism.css"/>
+    <script src="/assets/js/scroll-top.js" async></script>    
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous"></script>
+</head>
+
+<header id="Header">
+    <link rel="preload" as="image" href="/assets/header/BackgroundBanner.webp">
+    <h1 style="font-size: 4.25rem;">Ad Timer Tutorial</h1>
+</header>
+
+<div class="body-content">
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Ad Timer</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Video" class="text-hover">Video</a></li>
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Installation" class="text-hover">Installation</a></li>
+    <ul class="ul-indent">
+        <li><a href="#Timer" class="text-hover">Timer</a></li>
+        <li><a href="#Progress_Bar" class="text-hover">Progress Bar</a></li>
+        <li><a href="#Streamer_Bot" class="text-hover">Streamer.Bot</a></li>
+    </ul>
+</ul>
+</div>
+
+<section>
+<h2 id="Video">Video</h2>
+<p>COMING SOON</p>
+</section>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed tutorial on how to create an on-screen ad timer widget. This timer is built in OBS using the plugins listed under the <a href="#Requirements" class="text-hover">Requirements</a> section and is controlled using Streamer.Bot. All OBS scene imports and Streamer.Bot code for my own timer will be provided and can be used as is or as an example template to build your own.</p>
+
+<figure>
+    <img src="images/Ad Timer/AdTimer.webp" alt="Streamer.Bot import window after importing Ad Timer Widget code." style="max-width: 52%; height: auto;">
+</figure>
+
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/s/ab642a0930')" type="button" class="download-button">
+    <p><strong>Ad Timer</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 1rem;">
+    <li><strong><a href="https://obsproject.com/" class="text-hover">OBS (Version 31.0.0 or later)</a></strong></li>    
+    <li><strong>OBS Plugins</strong></li>
+    <ul class="ul-indent">
+        <li><a href="https://obsproject.com/forum/resources/move.913/" class="text-hover"><strong>Move</strong></a> - Required for the timer and to animate progress bar</li>
+        <li><a href="https://obsproject.com/forum/resources/obs-shaderfilter.1736/" class="text-hover"><strong>OBS Shaderfilter</strong></a> - Custom user-created shaders for the progress bar and other cosmetic details</li>
+        <li><a href="https://obsproject.com/forum/resources/source-copy.1261/" class="text-hover"><strong>Source Copy</strong></a> - Required to import OBS scenes</li>
+    </ul>
+</ul>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>Extract the Zip file. There should be two files available in the folder: <span class="text-green">Widget-Ad Timer-OBS</span> and <span class="text-green">Widget-Ad Timer-SB</span>. The OBS file is the import scene for your OBS setup, and the SB file is the import actions for your Streamer.Bot client. Before importing the OBS file, make sure all required plugins listed in the <a href="#Requirements" class="text-hover">Requirements</a> section are installed. In OBS, click on the Tools option, Source Copy, and then Load Scene (Figure 1).</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure01.webp" alt="Source Copy menu in OBS. Tools > Source Copy > Main > Load Scene" style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 1</strong>: Example of how to navigate the Source Copy menu in OBS to import the Ad Timer Widget.</figcaption>
+</figure>
+    
+<p>Locate <span class="text-green">Widget-Ad Timer-OBS</span> and open it. There should be two imported scenes in the Scenes List of your OBS setup (Figure 2). Do not rename the scenes and sources as they are referenced in the Streamer.Bot code and will not function properly if changed. For this widget to appear in other scenes, it is recommended to add the <span class="text-orange">Widget - Ad Timer</span> scene to the destined scene via nested scenes or the <a href="https://obsproject.com/forum/resources/downstream-keyer.1254/" class="text-hover">Downstrean Keyer</a> plugin.</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure02.webp" alt="OBS imports for the Ad Timer Widget. Ad Timer and Ad Timer - Timer Bar scene." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 2</strong>: Resulting scenes in OBS for the Ad Timer Widget.</figcaption>
+</figure>
+
+<p>In the Streamer.Bot client, click on the Import option in the top menu. Drag <span class="text-green">Widget-Ad Timer-SB</span> file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 3).</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure03.webp" alt="Streamer.Bot import window after importing Ad Timer Widget code." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 3</strong>: Streamer.Bot import window after importing Ad Timer Widget code.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2 id="Tutorial">Tutorial</h2>
+<p>The following sections explains how each element of my Ad Timer Widget was designed and functions. Example files are provided in the <a href="#Download_Code" class="text-hover">Download Code</a> section. You can use the Ad Timer Widget as provided or use it as a template to design your own. If you maintain the naming conventions, you will be able to use the provided Streamer.Bot code. Otherwise, you will need to make adjustments accordingly.</p>
+
+<h3 id="Timer">Timer</h3>
+<p>The timer is a Text Source (<span class="text-purple">Ad Timer - Clock</span>) with two Move Value source filters from the <a href="https://obsproject.com/forum/resources/move.913/" class="text-hover">Move</a> plugin (Figure 4). These filters will be used to control the source and function similarly to keyframes in an animation software. Each filter will serve as a set point for the source and the duration of time to move it to that set point.</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure04.webp" alt="Filter window for the Ad Timer - Clock text source in OBS." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 4</strong>: Filter window for <span class="text-purple">Ad Timer - Clock</span> text source in OBS.</figcaption>
+</figure>
+
+<p>The first filter (Start) is used to initiate the countdown timer. Figure 5 shows the settings used for this filter. The value field is the endpoint for the timer in seconds and will be set to 0 since the timer will be counting down. The Custom Duration field is the time in milliseconds (ms) for the source to go from the initial set point to the endpoint. This will be controlled by the Streamer.Bot code.</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure05.webp" alt="Filter window for the Ad Timer - Bar color source." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 5</strong>: Settings for the Start and Reset filters for the <span class="text-purple">Ad Timer - Bar</span> color source in OBS.</figcaption>
+</figure>
+
+<p>The second filter (Reset) is used to set the timer and shares similar settings to the Start filter. For this filter, Streamer.Bot will control the value field to set the timer to the appropriate start value. This allows you to make changes to your Twitch Ad settings and have Streamer.Bot adapt Ad Timer Widget accordingly.</p>
+
+<h3 id="Progress_Bar">Progress Bar</h3>
+<p>For the circular progress bar of the Ad Timer Widget, another scene was created (<span class="text-orange">Widget - Ad Timer - Timer Bar</span>) containing a Color Source with a Crop/Pad filter and two Move Value source filters controlling it. The scene will also have a filter using the <a href="https://obsproject.com/forum/resources/obs-shaderfilter.1736/" class="text-hover">OBS Shaderfilter</a>. The dimensions of the Color Source will have a width to match the base canvas width of my OBS setup and a height set to 200.</p>
+
+<p><span class="text-red">Disclaimer</span>: My OBS base canvas is currently set to 2560x1440. All dimensions and settings used for this widget are based on this base canvas size.</p>
+
+<p>This bar is positioned at the bottom of the scene. For filters of the Color Source, I added a Crop/Pad filter and two Move Value filters labeled Start and Reset. Both Start and Reset filters are linked to the Crop/Pad filter and have the Move Value Type set to Single Setting. The settings for each filter are shown in Figures 6 and 7. The Value field for the Start filter is set to the width of the base canvas (full crop) while Value field for the Reset filter is set to 0 (no crop). For the Start filter, the Custom Duration will match the duration set of the corresponding filter for the timer's Text Source. This will also be controlled by the Streamer.Bot code.</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure06.webp" alt="Settings for the Crop/Pad filter for the Ad Timer - Clock text source." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 6</strong>: Settings for the Crop/Pad filter for the <span class="text-purple">Ad Timer - Bar</span> color source in OBS.</figcaption>
+</figure>
+
+<figure>
+    <img src="images/Ad Timer/Figure07.webp" alt="Settings for the Start and Reset filters for the Ad Timer - Clock text source." style="max-width: 84%; height: auto;">
+    <figcaption><strong>Figure 7</strong>: Settings for the Start and Reset filters for the <span class="text-purple">Ad Timer - Bar</span> color source in OBS.</figcaption>
+</figure>
+
+<p>Finally, to achieve the circular look of the progress bar, the Polar Shader is applied as a filter to the scene using the <a href="https://obsproject.com/forum/resources/obs-shaderfilter.1736/" class="text-hover">OBS Shaderfilter</a> (Figure 8). These are user-created shaders that can apply different effects and cosmetic looks to your scenes and sources. The Polar Shader converts the rectangular scene into a circular one. The size of the progress bar can be adjusted by moving the Color Source towards the center of the scene, and the thickness can be adjusted using the height of the Color Source.</p>
+
+<figure>
+    <img src="images/Ad Timer/Figure08.webp" alt="Settings for the Start and Reset filters for the Ad Timer - Clock text source." style="max-width: 44%; height: auto;">
+    <figcaption><strong>Figure 8</strong>: Settings for the Start and Reset filters for the <span class="text-purple">Ad Timer - Clock</span> text source in OBS.</figcaption>
+</figure>
+
+<p>Finally, all positional and cosmetic adjustments for the Ad Timer widget is made in the <span class="text-orange">Widget - Ad Timer</span> scene.</p>
+
+<h3 id="Streamer_Bot">Streamer.Bot</h3>
+<p>The SB file provided in the <a href="#Download_Code" class="text-hover">Download Code</a> contains the action required to run the Ad Timer Widget. In order to trigger the <span class="text-yellow">Ad Break</span> action, the <span class="text-blue">Twitch Ad Run</span> trigger needs to be assigned to the action.</p>
+
+<figure></figure>
+    
+<p>The trigger provides two variables used in the code, <span class="code-red">adLength</span> (ad length in seconds) and <span class="code-red">adLengthMs</span> (ad length in milliseconds). In the <strong>Execute Code (Set Ad Timer)</strong> sub-action, these two variables are imported into the C# code to set the time and animation duration of the Timer and animation duration of the Progress Bar. In order to set these filters, the code utilizes the ObsSendRaw function (Figure 9).</p>
+
+<script src="/assets/js/prism.js"></script>
+<pre class="code">
+<code class="language-Csharp">
+	public void SetTimer(string sourceName, int adLength, int adLengthMs)
+	{
+		JObject reset = new JObject();
+		reset["sourceName"] = sourceName;
+		reset["filterName"] = "Reset";
+		reset["filterSettings"] = new JObject();
+		reset["filterSettings"]["setting_float"] = adLength;
+		reset["overlay"] = true;
+		CPH.ObsSendRaw("SetSourceFilterSettings", reset.ToString(), obsConnection);
+		
+		//Set duration of Timer
+		JObject start = new JObject();
+		start["sourceName"] = sourceName;
+		start["filterName"] = "Start";
+		start["filterSettings"] = new JObject();
+		start["filterSettings"]["duration"] = adLengthMs;
+		start["overlay"] = true;
+		CPH.ObsSendRaw("SetSourceFilterSettings", start.ToString(), obsConnection);
+		
+	}
+	
+	public void SetTimerBar(string sourceName, int adLengthMs)
+	{
+		JObject req = new JObject();
+		req["sourceName"] = sourceName;
+		req["filterName"] = "Start";
+		req["filterSettings"] = new JObject();
+		req["filterSettings"]["duration"] = adLengthMs;
+		req["overlay"] = true;
+		
+		CPH.ObsSendRaw("SetSourceFilterSettings", req.ToString(), obsConnection);
+	}
+</code>
+</pre>
+<figcaption><strong>Figure 9</strong>: Sample C# code for the Ad Timer Widget. <code class="code-red">SetTimer</code> sets the time and animation duration for the timer and <code class="code-red">SetTimerBar</code> sets the animation duration for the progress bar.</figcaption>
+
+<p>With this setup, the Ad Timer Widget may adapt to whatever length of ads you manually trigger or set in your Twitch dashboard. How it works is when ads begin to run, the ad length information is provided to Streamer.Bot through the <span class="text-blue">Twitch Ad Run</span> trigger. The <strong>Execute Coded (Set Ad Timer)</strong> sub-action sets the Start and Reset filters for the sources in OBS. Once everything is set, the second sub-action, <strong>OBS Studio Source Visibility State</strong>, shows the widget on screen and triggers the timer and progress bar animation. After the set ad length, the last sub-action, another <strong>OBS Studio Source Visilibity State</strong>, hides the widget. When setting the <span class="text-orange">Widget - Ad Timer</span> in its destined scene using nested scenes, make sure the scene setting for both <strong>OBS Studio Set Source Visibility State</strong> is set to the corresponding scene. You can also add a show and hide animation to this source.</p>
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.github.io"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+</html>
