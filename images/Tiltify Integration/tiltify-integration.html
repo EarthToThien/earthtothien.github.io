@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: sans-serif">
+    <title>Tiltify Integration Extension</title>
+    <meta name="Description" content="Streamer.Bot Tiltify Integration Extension">
+    <meta name="keywords" content="Streamer.Bot, Tiltify, extension, charity, alerts, overlay, chatbot">
+    <meta name="author" content="EarthToThien">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image:url" content="/assets/header/SocialBanner.webp">
+    <meta property="og:url" content="https://earthtothien.github.io/tiltify-integration.html">
+    <meta property="og:title" content="Thien's Streamer Corner">
+    <meta property="og:description" content="A place for me to share all my widgets for Streamer.Bot and OBS!">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/prism.css"/>
+    <script src="/assets/js/scroll-top.js" async></script>
+    <script src="https://kit.fontawesome.com/6c17de7f6c.js" crossorigin="anonymous" async></script>
+</head>
+
+<header id="Header">
+    <link rel="preload" as="image" href="/assets/header/BackgroundBanner.webp">    
+    <h1 style="font-size: 4.25rem;">Tiltify Integration Extension</h1>
+</header>
+
+<div class="body-content">
+<div>
+<p><a href="index.html" class="text-hover">Home</a> &gt; Tiltify Integration</p>
+</div>
+
+<div>
+<h2 id="Table_of_Contents">Table of Contents</h2>
+<ul class="ul-toc">
+    <li><a href="#Video" class="text-hover">Latest Video</a></li>
+    <li><a href="#Introduction" class="text-hover">Introduction</a></li>
+    <li><a href="#Requirements" class="text-hover">Requirements</a></li>
+    <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
+    <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <li><a href="#Alerts" class="text-hover">Alert Example</a></li>
+    <li><a href="#Total_Raised" class="text-hover">Get Total Raised</a></li>
+    <li><a href="#Changelog" class="text-hover">Changelog</a></li>    
+</ul>
+</div>
+
+<section>
+<h2 id="Video">Latest Video</h2>
+<div class="video-container"><iframe class="responsive-iframe" src="https://www.youtube.com/embed/N7kBTvTiJzg?si=I1BnmC5UzdcLrD9S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</section>
+
+<section>
+<h2 id="Introduction">Introduction</h2>
+<p>This is a detailed overview of the Tiltify Integration Extension for Streamer.Bot. The purpose of this extension is to serve as a foundation for streamers to connect their Streamer.Bot client to Tiltify and to have their own custom actions be triggered by donations to their Tiltify charity campaign.</p>
+</section>
+
+<section>
+<h2 id="Requirements">Requirements</h2>
+<ul style="padding-left: 1rem;">
+    <li><strong>Tiltify Account</strong> - User will need a Tiltify account in order to gain the necessary access to Tiltify.</li>
+    <li><strong>Tiltify Campaign</strong> - User must have an active Tiltify campaign in order for the extension to work properly.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="Download_Code">Download Code</h2>
+<button onclick="window.open('https://ko-fi.com/s/7d7437c1c9')" type="button" class="download-button">
+    <p><strong>Tiltify Integration for Streamer.Bot</strong></p>
+    <p><i class="fa-solid fa-mug-hot fa-lg" style="padding-right: 0.5rem;"></i>EarthToThien's Ko-fi Shop</p>
+</button>
+</section>
+
+<section>
+<h2 id="Installation">Installation</h2>
+<p>In the Streamer.Bot client, select the Import option in the top menu. Drag the downloaded Download Code file into the Import String field. If done correctly, the Import Actions window should match the following image (Figure 1).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/01 Import Window.webp" alt="Streamer.Bot import window containing the actions for the Streamer.Bot Tiltify Integration Extension." style="max-width: 60%; height: auto;">
+    <figcaption><strong>Figure 1:</strong> Streamer.Bot import window containing the actions for the extension.</figcaption>
+</figure>
+
+<p>After importing the extension, the following items should appear in the Streamer.Bot client under the corresponding tabs:</p>
+<ul>
+    <li><strong>Actions Tab</strong></li>    
+    <ul>
+        <li>Tiltify - 01 - Setup</li>
+        <li>Tiltify - 02 - Get Access Token</li>
+        <li>Tiltify - 03 - List Donations</li>
+        <li>Tiltify - 04 - Total Raised</li>
+    </ul>
+    <li><strong>Queues Tab</strong></li>
+    <ul>
+        <li>Tiltify - Access Token</li>
+        <li>Tiltify</li>
+    </ul>
+    <li><strong>Timed Actions Tab</strong></li>
+    <ul>
+        <li>Tiltify - List Donations</li>
+    </ul>
+</ul>
+
+<p>After importing the Streamer.Bot Tiltify extension, the Streamer.Bot client needs to be restarted in order to load a custom trigger. After re-opening the client, right click in the Triggers window to navigate through the following menu path: Add > Custom > Tiltify (Figure 2). If <span class="text-blue">Get Donation</span> appears, the extension has been properly installed and ready to be configured.</p>
+
+<figure>
+    <img src="images/Tiltify Integration/02 Get Donation.webp" alt="After restarting Streamer.Bot, Get Donation should appear under the Custom option of the Triggers menu." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 2:</strong> After restarting Streamer.Bot, <span class="text-blue">Get Donation</span> should appear under the Custom option of the Triggers menu.</figcaption>
+</figure>
+
+</section>
+
+<section>
+<h2 id="Configuration">Configuration</h2>
+<p>To configure the Streamer.Bot Tiltify extension, click on the <span class="text-yellow">Setup</span> action, right click on the <span class="text-blue">Test</span> trigger, and select the Test Trigger option. A new window should appear as shown in Figure 3. This new window may appear behind your Streamer.Bot client</p>
+
+<figure>
+    <img src="images/Tiltify Integration/03 Setup Window.webp" alt="The Setup window requires information from your Tiltify account and active charity campaign: Client ID, Client Secret, and Campaign ID." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 3:</strong> The Setup window requires information from your Tiltify account and active charity campaign: <span class="text-red">Client ID</span>, <span class="text-red">Client Secret</span>, and <span class="text-red">Campaign ID</span>.</figcaption>
+</figure>
+
+<p>A Tiltify account is required in order to acquire a <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span>. From the Tiltify dashboard, access the Developer Hub and create an application. The Redirect URI field needs to be populated in order to create an application but is not required for the extension to function. For this, <code class="code-red">http://localhost</code> is used as a placeholder as shown in Figure 4.</p>
+
+<figure>
+    <img src="images/Tiltify Integration/04 Tiltify App Window.webp" alt="The App window from the Tiltify Developers dashboard. A Redirect URI is needed but not required for the extension to function. http://localhost can be used as a placeholder." style="max-width: 40%; height: auto;">
+    <figcaption><strong>Figure 4:</strong> When creating an app in the Tiltify Developers dashboard, a Redirect URI is needed but not required for the extension to function. <code class="code-red">http://localhost</code> can be used as a place holder.</figcaption>
+</figure>
+
+<p>After creating an app, a notification will appear, indicating that the app was successfully made. Further down the page, there is a blurred section called "Application keys" that will provide the <span class="text-red">Client ID</span> and <span class="text-red">Client Secret</span>. Copy this information into their corresponding fields of the Streamer.Bot setup window (Figure 5).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/05 Tiltify-StreamerBot Setup.webp" alt="The Streamer.Bot setup window requires information from your Tiltify account and charity campaign." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 5:</strong> The Streamer.Bot setup window requires information from your Tiltify account and charity campaign.</figcaption>
+</figure>
+
+<p>This extension also requires a published and active Tiltify charity campaign. From the Tiltify campaign dashboard, the <span class="text-red">Campaign ID</span> can be found under the information tab of Setup (Figure 5).</p>
+<p>Finally, a campaign type must be selected (Solo, Team, or Personal). Each type corresponds the type of Tiltify campaign you currently have active, and only one type may be selected for per installation of the extension. This option determines what endpoints are used to send requests to Tiltify. Once you confirm all fields are populated correctly and click submit, a new window will appear confirming that you are successfully connected to your campaign. The name of your campaign will appear in this new window (Figure 6).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/06 Confirmation Window.webp" alt="Once all information populated correctly and submitted, the confirmation window will appear with a message stating that Streamer.Bot is now connected to your Tiltify campaign." style="max-width: 64%; height: auto;">
+    <figcaption><strong>Figure 6:</strong> Once all information populated correctly and submitted, the confirmation window will appear with a message stating that Streamer.Bot is now connected to your Tiltify campaign.</figcaption>
+</figure>
+
+<h2 id="List_Donations">List Donations</h2>
+<p>The <span class="text-yellow">List Donations</span> action serves as the source for all donation alerts. There is a repeating timer called <span class="text-blue">Tiltify - List Donations</span> that serves as the trigger for the <span class="text-yellow">List Donations</span> action. This timer can be adjusted in the Streamer.Bot client under Services > Timers and is defaulted at 2-second intervals. When importing the extension, this trigger is disabled by default and needs to be enabled in order to begin polling.</p>
+<p>With each trigger, the <span class="text-yellow">List Donations</span> action polls Tiltify for the latest donation data from the current connected Tiltify campaign. When a new donation is detected, the arguments listed in Table 1 will be sent through custom <span class="text-blue">Get Donation</span> trigger. These arguments may be used in your actions for your custom alerts and stream interactions.</p>
+
+<table class="center">
+    <caption><strong>Table 1</strong>: The arguments generated by the <span class="text-yellow">List Donations</span> action and sent through the <span class="text-blue">Get Donation</span> trigger.</caption>
+    <tr>
+        <th><strong>Argument</strong></th>
+        <th><strong>Type</strong></th>
+        <th><strong>Description</strong></th>
+    </tr>
+    <tr>
+        <td><code class="code-red">donationId</code></td>
+        <td>String</td>
+        <td>Unique identifier assigned to each donation to the Tiltify campaign. This argument is used by the extension to determine whether or not there is a new donation to the Tiltify campaign. The last five <code class="code-red">donationId</code> are saved and used as reference for new donations.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donationDate</code></td>
+        <td>String</td>
+        <td>Date and time (UTC) of when donation occurs.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorName</code></td>
+        <td>String</td>
+        <td>Name provided with the donation to the Tiltify campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorAmount</code></td>
+        <td>Decimal</td>
+        <td>Donation amount (USD) made to the Tiltify campaign.
+            <br>
+            <span class="text-red">Note:</span> If you are using the C# Compiler for your alert actions, it is recommended to convert <code class="code-red">donorAmount</code> to String (i.e., <code class="code-red">donorAmount.ToString("F2")</code>) before displaying it in your on-screen alert or chat alert message. For other subactions such as <strong>Send Message to Channel</strong>, you will also need to format your argument (i.e., <code class="code-red">%donorAmount:F2%</code>).
+        </td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorComment</code></td>
+        <td>String</td>
+        <td>Message that donor included with the donation to the Tiltify campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">donorRewards</code></td>
+        <td>List&lt;String&gt;</td>
+        <td>List of reward IDs of the rewards claimed with each donation to the Tiltify campaign. Each reward created for the Tiltify campaign is assigned a unique ID and appears in the data when claimed with each donation.</td>
+    </tr>
+</table>
+</section>
+
+<section>
+<h2 id="Alerts">Alert Example</h2>
+<p>Alert actions are triggered by the custom <span class="text-blue">Get Donation</span> trigger. When activated, the action will have access to all the arguments generated by the <span class="text-yellow">List Donations</span> action. Creating alerts with this extension follows the same logic and process as any alerts made for other platforms with Streamer.Bot. This section covers how to create a simple chat donation alert.</p>
+
+<figure>
+    <img src="images/Tiltify Integration/07 Triggers-SubActions.webp" alt="Example setup for a Streamer.Bot action for a donation alert. The action will send a Twitch message to thank the donor and then run the Get Total Raised action." style="max-width: 52%; height: auto;">
+    <figcaption><strong>Figure 7:</strong> Example setup for a Streamer.Bot action for a donation alert. The action will send a Twitch message to thank the donor and then run the <span class="text-yellow">Get Total Raised</span> action.</figcaption>
+</figure>
+
+<p>In the Trigger window for your action, select the <span class="text-blue">Get Donation</span> trigger. This is so that when a new donation is detected for your campaign, this alert action will trigger. Since a chat message will be used for the alert, a <strong>Send Message to Channel</strong> sub-action is added in the Sub-Actions window. Figure 8 shows the message that will be sent to the channel's chat and how it will utilize the <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code> arguments (Figure 7).</p>
+
+<figure>
+    <img src="images/Tiltify Integration/08 Send Message.webp" alt="Example of how the Send Message to Channel sub-action can be setup to send a donation alert to the Twitch chat. It utilizes the arguments donorName and donorAmount. These arguments are generated by the List Donations action" style="max-width: 52%; height: auto;">
+    <figcaption><strong>Figure 8:</strong> Example of how the <strong>Send Message to Channel</strong> sub-action can be used to send a donation alert to the Twitch chat. It utilizes the arguments <code class="code-red">donorName</code> and <code class="code-red">donorAmount</code>. These arguments are generated by the <span class="text-yellow">List Donations</span> action.</figcaption>
+</figure>
+
+For the last sub-action, we will have Streamer.Bot run the <span class="text-yellow">Get Total Raised</span> action. This sub-action is optional, and the action will be explained in the next section.
+</section>
+
+<section>
+<h2 id="Total_Raised">Get Total Raised</h2>
+<p>The <span class="text-yellow">Get Total Raised</span> action is an optional feature that generates the arguments listed in Table 2. These arguments can be used to display the current progress of the Tiltify charity campaign. This action can be run by adding it as the last sub-action for each alert action or by setting a command or timer as the trigger.</p>
+
+<table class="center">
+    <caption><strong>Table 2</strong>: All arguments generated by the <span class="text-yellow">Total Raised</span> action.</caption>
+    <tr>
+        <th><strong>Argument</strong></th>
+        <th><strong>Type</strong></th>
+        <th><strong>Description</strong></th>
+    </tr>
+    <tr>
+        <td><code class="code-red">currentTotal</code></td>
+        <td>Decimal</td>
+        <td>The current amount raised for the Tiltify charity campaign.</td>
+    </tr>
+    <tr>
+        <td><code class="code-red">currentGoal</code></td>
+        <td>Decimal</td>
+        <td>The current goal set for the Tiltify charity campaign.</td>
+    </tr>
+</table>
+</section>
+
+<section>
+<h2 id="Changelog">Changelog</h2>
+<h3>Version 3.0</h3>
+<ul style="padding-left: 1rem;">
+    <li>All actions re-labeled for clarity. Document updated to account for this change.</li>
+    <li>New <span class="text-yellow">Tiltify - 01 - Setup</span> action added. This action will now handle inputting the Tiltify account and campaign information.</li>
+    <li><span class="text-yellow">List Donations</span> action updated with endpoints for team and personal campaigns.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Added function to generate custom trigger <span class="text-blue">Get Donation</span>. This trigger will be available after user restarts Streamer.Bot client after importing the extension. Alert actions can now use the custom <span class="text-blue">Get Donation</span> trigger.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Action now generates JSON string of arguments for custom trigger <span class="text-blue">Get Donation</span>.</li>
+    <li><span class="text-yellow">List Donations</span> action updated. Action now checks the last 5 donations with each data pull for a new donation. If there are multiple new donations, the extension will queue the alert actions as the new donations appear in the data. Thanks to Frogsye and Pwnny for introducing this fix!</li>
+    <li><span class="text-yellow">Get Total Raised</span> action updated with endpoints for team and personal campaigns.</li>
+    <li><span class="text-yellow">Get Total Raised</span> action updated. currentTotal now pulls from <code class="code-red">total_amount_raised</code> in the Tiltify campaign instead of <code class="code-red">amount_raised</code>. <code class="code-red">total_amount_raised</code> is the amount raised by the current campaign and all supporting campaigns such as amplify links and the auction house.</li>
+</ul>
+<h3>Version 2.1</h3>
+<ul style="padding-left: 1rem;">
+    <li><span class="text-yellow">List Donations</span> action updated. <code class="code-red">donorAmount</code> argument updated to function consistently across all cultures. Added <span class="text-purple">CultureInfo.InvariantCulture</span> call to the <span class="text-purple">Convert.ToDecimal()</span> for <code class="code-red">donorAmount</code>.</li>
+    <li><span class="text-yellow">Total Raised</span> action updated. <code class="code-red">currentTotal</code> and <code class="code-red">currentGoal</code> arguments updated to function consistently across all cultures. Added <span class="text-purple">CultureInfo.InvariantCulture</span> call to the <span class="text-purple">Convert.ToDecimal()</span> for <code class="code-red">currentTotal</code> and <code class="code-red">currentGoal</code>.</li>
+</ul>
+</section>
+
+<button class="scroll-to-top"><i class="fa-solid fa-chevron-up" style="font-size: 2rem; text-align: center;"></i></button>
+
+</div>
+
+<footer>
+    <div class="foot-column">
+        <div class="foot-header">Socials</div>
+        <ul class="foot-ul">
+            <li><a href="https://bsky.app/profile/earthtothien.github.io"><i class="fa-brands fa-bluesky"></i><span class="text-hover" style="padding-left: 0.5rem;">Bluesky</span></a></li>
+            <li><a href="https://www.threads.net/@earthtothien"><i class="fa-brands fa-threads"></i><span class="text-hover" style="padding-left: 0.5rem;">Threads</span></a></li>
+            <li><a href="https://www.instagram.com/earthtothien/"><i class="fa-brands fa-instagram"></i><span class="text-hover" style="padding-left: 0.5rem;">Instagram</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Support</div>
+        <ul class="foot-ul">
+            <li><a href="https://www.twitch.tv/EarthToThien"><i class="fa-brands fa-twitch"></i><span class="text-hover" style="padding-left: 0.5rem;">Twitch</span></a></li>
+            <li><a href="https://www.youtube.com/@EarthToThien"><i class="fa-brands fa-youtube"></i><span class="text-hover" style="padding-left: 0.5rem;">YouTube</span></a></li>
+            <li><a href="https://ko-fi.com/earthtothien"><i class="fa-solid fa-mug-hot"></i><span class="text-hover" style="padding-left: 0.5rem;">Ko-fi</span></a></li>
+        </ul>
+    </div>
+    <div class="foot-column">
+        <div class="foot-header">Contact</div>
+        <ul class="foot-ul">
+            <li><a href="mailto:EarthToThienCo@gmail.com"><i class="fa-regular fa-envelope"></i><span class="text-hover" style="padding-left: 0.5rem;">EarthToThienCo@gmail.com</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+</html>
