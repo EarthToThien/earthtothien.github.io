@@ -34,6 +34,7 @@
     <li><a href="#Requirements" class="text-hover">Requirements</a></li>
     <li><a href="#Download_Code" class="text-hover">Download Code</a></li>
     <li><a href="#Configuration" class="text-hover">Configuration</a></li>
+    <li><a href="#List_Donations" class="text-hover">List Donations</a></li>
     <li><a href="#Alerts" class="text-hover">Alert Example</a></li>
     <li><a href="#Total_Raised" class="text-hover">Get Total Raised</a></li>
     <li><a href="#Changelog" class="text-hover">Changelog</a></li>    
@@ -166,7 +167,7 @@
         <td>Decimal</td>
         <td>Donation amount (USD) made to the Tiltify campaign.
             <br>
-            <span class="text-red">Note:</span> If you are using the C# Compiler for your alert actions, it is recommended to convert <code class="code-red">donorAmount</code> to String (i.e., <code class="code-red">donorAmount.ToString("0.00")</code>) before displaying it in your on-screen alert or chat alert message.
+            <span class="text-red">Note:</span> If you are using the C# Compiler for your alert actions, it is recommended to convert <code class="code-red">donorAmount</code> to String (i.e., <code class="code-red">donorAmount.ToString("F2")</code>) before displaying it in your on-screen alert or chat alert message. For other subactions such as <strong>Send Message to Channel</strong>, you will also need to format your argument (i.e., <code class="code-red">%donorAmount:F2%</code>).
         </td>
     </tr>
     <tr>
